@@ -1,0 +1,72 @@
+<div class="container">
+  <form #f="ngForm" autocomplete="off">
+
+    <div class="ui-g">
+      <div class="ui-g-12 ui-md-12">
+        <h1 class="pi pi-save">Cadastro de Aluno</h1>
+      </div>
+
+      <div class="ui-g-12 ui-md-12 ui-fluid">
+        <label>Nome</label>
+        <input pInputText type="text" name="nome"
+          ngModel #nome="ngModel" required minlength="5" placeholder="Informe o nome">
+
+        <app-message [control]="nome" error="required"
+          text="Informe o nome"></app-message>
+        <app-message [control]="nome" error="minlength"
+          text="Mínimo de {{ nome.errors?.minlength?.requiredLength }} caracteres"></app-message>
+
+      </div>
+
+      <div class="ui-g-12 ui-md-4 ui-fluid">
+        <label>CEP</label>
+        <p-inputMask name="cep" mask="99.999-999"
+          ngModel #cep="ngModel" required placeholder="00.000-00"></p-inputMask>
+
+
+        <app-message [control]="cep" error="required"
+          text="Informe o CEP"></app-message>
+
+      </div>
+
+      <div class="ui-g-12 ui-md-4 ui-fluid">
+        <label> Data de Nascimento </label>
+        <p-calendar name="dataNascimento" dateFormat="dd/mm/yy"
+          [inline]="false" [readonlyInput]="false" [showIcon]="true"
+          ngModel #dataNascimento="ngModel" required></p-calendar>
+
+        <app-message [control]="dataNascimento" error="required"
+          text="Informe a Data de Nascimento"></app-message>
+      </div>
+
+      <div class="ui-g-12 ui-md-4 ui-fluid">
+        <label> Disciplinas </label>
+        <p-dropdown name="disciplinas" [options]="cities1"
+          ngModel #dataNascimento="ngModel" required></p-dropdown>
+
+        <app-message [control]="dataNascimento" error="required"
+          text="Informe a Data de Nascimento"></app-message>
+      </div>
+
+      <div class="ui-g-12 ui-md-12 ui-fluid">
+        <label>Matrícula</label>
+        <input pInputText type="text" name="matricula"
+          ngModel #matricula="ngModel" required minlength="6" maxlength="6" placeholder="Informe o nome">
+
+        <app-message [control]="matricula" error="required"
+          text="Informe a matrícula"></app-message>
+        <app-message [control]="matricula" error="minlength"
+          text="Informe uma matrícula com {{ matricula.errors?.minlength?.requiredLength }} caracteres"></app-message>
+
+      </div>
+
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+        <button pButton type="button" label="Novo" class="ui-button-info"></button>
+
+        <a href="javascript:;">Voltar para a pesquisa</a>
+      </div>
+    </div>
+
+  </form>
+</div>
