@@ -1,3 +1,6 @@
+import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { AlunosModule } from './alunos-page/alunos.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -6,22 +9,26 @@ import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
 import { ProfessoresModule } from './professores/professores.module';
-import { DisciplinasModule } from './disciplinas/disciplinas.module';
-import { CoreModule } from './core/core.module';
-import { AlunosModule } from './alunos/alunos.module';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { HomePageComponent } from './home-page/home-page.component';
+
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AlunosModule,
-    CoreModule,
-    DisciplinasModule,
     ProfessoresModule,
-    SharedModule
+    SharedModule,
+    ButtonModule,
+    RouterModule,
+    TabMenuModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
