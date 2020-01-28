@@ -18,12 +18,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { DisciplinaCadastrarComponent } from './disciplina-cadastrar/disciplina-cadastrar.component';
 import {SliderModule} from 'primeng/slider';
 import {ToggleButtonModule} from 'primeng/togglebutton';
+import { DisciplinasDetalharComponent } from './disciplinas-detalhar/disciplinas-detalhar.component';
 
 @NgModule({
   declarations: [
       DisciplinasListagemComponent,
       DisciplinasPageComponent,
-      DisciplinaCadastrarComponent
+      DisciplinaCadastrarComponent,
+      DisciplinasDetalharComponent
   ],
   imports: [
     CommonModule,

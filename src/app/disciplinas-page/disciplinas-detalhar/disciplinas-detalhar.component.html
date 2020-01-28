@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="box">
+        <div class="ui-g">
+            <div class="ui-g-2"></div>
+            <div style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" class="ui-g-8">
+                <h1> Detalhes da Disciplina </h1>
+            </div>
+            <div class="ui-g-2"></div>
+            <div class="ui-g-2"></div>
+            <div style="border-style:groove;" class="ui-g-8">
+                <div class="ui-g-12">
+                    Nome: <input type="text" pInputText value="{{ disciplina.nome }}" disabled name="nome"/>
+                </div>
+
+                <div class="ui-g-6">
+                    Id: <input type="text" pInputText value="{{ disciplina.id }}" disabled name="id"/>
+                </div>
+
+                <div class="ui-g-6">
+                    Carga Horária: <input type="text" pInputText value="{{ disciplina.cargaHoraria }}" disabled name="cargaHoraria"/>
+                </div>
+
+                <div class="ui-g-12">
+                    Professor: <input type="text" pInputText disabled value="{{ disciplina.professor.nome }}" name="professor"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

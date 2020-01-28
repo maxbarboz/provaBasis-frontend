@@ -9,6 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DisciplinaCadastrarComponent } from './disciplinas-page/disciplina-cadastrar/disciplina-cadastrar.component';
 import { ProfessoresPageComponent } from './professores-page/professores-page.component';
 import { ProfessoresCadastrarComponent } from './professores-page/professores-cadastrar/professores-cadastrar.component';
+import { DisciplinasDetalharComponent } from './disciplinas-page/disciplinas-detalhar/disciplinas-detalhar.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,8 @@ const routes: Routes = [
   { path: 'disciplinas', component: DisciplinasPageComponent
   },
   { path: 'disciplinas/cadastrar', component: DisciplinaCadastrarComponent
+  },
+  { path: 'disciplinas/detalhar', component: DisciplinasDetalharComponent
   },
   { path: 'professores', component: ProfessoresPageComponent
   },

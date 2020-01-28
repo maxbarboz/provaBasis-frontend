@@ -7,9 +7,9 @@
         </div>
   
         <div class="ui-g-12 ui-md-12 ui-fluid">
-          <label>Nome</label>
+          <label>Nome da disciplina</label>
           <input pInputText type="text" name="nome"
-            [(ngModel)]="disciplina.nome" #nome="ngModel" required minlength="5" placeholder="Informe o nome">
+            [(ngModel)]="disciplina.nome" #nome="ngModel" required minlength="4">
   
           <app-message [control]="nome" error="required"
             text="Informe o nome"></app-message>
@@ -19,21 +19,26 @@
         </div>
   
         <div class="ui-g-12 ui-md-4 ui-fluid">
-          <label>Ativa - </label>
-            <p-toggleButton [style]="{'width':'50px'}"></p-toggleButton>
-        </div>
-  
-        <div class="ui-g-12 ui-md-4 ui-fluid">
-            <label> Carga Horária </label>
+          <label> Ativa </label>
+          <p-dropdown [options]="colsAtiva" [(ngModel)]="disciplina.ativa" placeholder="Status da disciplina" 
+          [showClear]="true" name="ativa" required></p-dropdown>
         </div>
   
         <div class="ui-g-12 ui-md-4 ui-fluid">
           <label> Professor Responsável </label>
+          <p-dropdown [options]="professores" [(ngModel)]="disciplina.professor" placeholder="Selecione o Professor"
+          [showClear]="true" name="professores" required></p-dropdown>
+        </div>
+
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+          <label> Carga Horária: </label>
+          <input pInputText type="text" name="cargaHoraria"
+            [(ngModel)]="disciplina.cargaHoraria" #cargaHoraria="ngModel" required minlength="1" maxlength="2">
         </div>
 
         <div class="ui-g-12 ui-md-4 ui-fluid">
             <label>Descrição</label>
-           <textarea [style]="{'size':'1000px'}" required></textarea>
+           <textarea [style]="{'size':'1000px'}" required [(ngModel)]="disciplina.descricao" name="descricao"></textarea>
           </div>
   
         <div class="ui-g-10">

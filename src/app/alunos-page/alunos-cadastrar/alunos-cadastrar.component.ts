@@ -25,10 +25,13 @@ ngOnInit() {
         return { label: disciplina.nome , value: {"id": disciplina.id} }
     }));
 
+  this.alunosService.detalhar().subscribe( ( res =>{
+    this.aluno = res.json();
+    console.log( this.aluno );
+  }));
 }
 
   adicionar() {
-    console.log(this.aluno);
     this.alunosService.adicionar(this.aluno).subscribe( aluno => {
       alert('Aluno cadastrado!');
     });

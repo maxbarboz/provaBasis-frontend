@@ -8,7 +8,7 @@ import { DisciplinasService } from '../disciplinas.service';
 })
 export class DisciplinasListagemComponent implements OnInit {
 
-  disciplinas: any = [];
+  disciplina: any = [];
   cols: any[] =  [];
 
   constructor(private disciplinasService: DisciplinasService) {}
@@ -26,7 +26,19 @@ export class DisciplinasListagemComponent implements OnInit {
 
   consultar(){
     this.disciplinasService.consultar().subscribe( res => {
-      this.disciplinas = res;
+      this.disciplina = res;
     });
+  }
+
+  excluir(id: number){
+    console.log( id )
+    this.disciplinasService.excluir(id).subscribe( res => {
+      alert('Disciplina excluida com sucesso!');
+      this.consultar();
+    });
+  }
+
+  addIdPesquisa(id: number){
+    this.disciplinasService.addIdPesquisa(id);
   }
 }
