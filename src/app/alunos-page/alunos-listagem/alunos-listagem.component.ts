@@ -36,4 +36,8 @@ export class AlunosListagemComponent implements OnInit {
       this.consultar();
     });
   }
+
+  addIdPesquisa(id: number){
+    this.alunosService.addIdPesquisa(id);
+  }
 }

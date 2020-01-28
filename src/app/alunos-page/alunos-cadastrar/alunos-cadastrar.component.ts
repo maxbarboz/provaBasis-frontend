@@ -3,6 +3,7 @@ import { AlunosService } from './../alunos.service';
 import { Component, OnInit } from '@angular/core';
 import { Aluno } from 'src/app/model/aluno.model';
 import { SelectItem } from 'primeng/api/selectitem';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-alunos-cadastrar',
@@ -13,8 +14,9 @@ export class AlunosCadastrarComponent implements OnInit{
 
 aluno: Aluno = new Aluno();
 disciplinas: SelectItem[];
+alunoId: number;
 
-constructor(private alunosService: AlunosService, private disciplinasService: DisciplinasService) {
+constructor(private alunosService: AlunosService, private disciplinasService: DisciplinasService, private route: ActivatedRoute) {
 }
 
 ngOnInit() {
@@ -22,6 +24,7 @@ ngOnInit() {
     this.disciplinas = res.map( disciplina => {
         return { label: disciplina.nome , value: {"id": disciplina.id} }
     }));
+
 }
 
   adicionar() {

@@ -1,3 +1,4 @@
+import { AlunosDetalharComponent } from './alunos-page/alunos-detalhar/alunos-detalhar.component';
 import { DisciplinasPageComponent } from './disciplinas-page/disciplinas-page.component';
 import { AlunosCadastrarComponent } from './alunos-page/alunos-cadastrar/alunos-cadastrar.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent
   },
   { path: 'alunos/cadastrar', component: AlunosCadastrarComponent
+  },
+  { path: 'alunos/detalhar', component: AlunosDetalharComponent
   },
   { path: 'disciplinas', component: DisciplinasPageComponent
   },

@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="box">
+        <div class="ui-g">
+            <div class="ui-g-2"></div>
+            <div style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" class="ui-g-8">
+                <h1> Detalhes do Aluno </h1>
+            </div>
+            <div class="ui-g-2"></div>
+            <div class="ui-g-2"></div>
+            <div style="border-style:groove;" class="ui-g-8">
+                <div class="ui-g-12">
+                    Nome: <input type="text" pInputText value="{{ alunos.nome }}" disabled/>
+                </div>
+
+                <div class="ui-g-6">
+                    Id: <input type="text" pInputText value="{{ alunos.id }}" disabled/>
+                </div>
+
+                <div class="ui-g-6">
+                    Matrícula: <input type="text" pInputText value="{{ alunos.matricula }}" disabled/>
+                </div>
+
+                <div class="ui-g-12">
+                    Matérias:
+                    <ul>
+                        <li *ngFor="let disciplinas of alunos.disciplinas">
+                            <input type="text" pInputText value="{{ disciplinas.nome }}" disabled/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

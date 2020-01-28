@@ -8,6 +8,7 @@ import { log } from 'util';
 })
 export class AlunosService {
 
+  idAluno: number;
   // tslint:disable-next-line: deprecation
   constructor(private http: Http, private httpService: HttpClient) { }
 
@@ -23,4 +24,12 @@ export class AlunosService {
     return this.http.delete(`http://localhost:8080/api/alunos/${matricula}`);
   }
 
+  detalhar(){
+    return this.http.get(`http://localhost:8080/api/alunos/detalhes/${this.idAluno}`);
+  }
+
+  addIdPesquisa(id: number){
+    console.log( id )
+    this.idAluno =  id;
+  }
 }

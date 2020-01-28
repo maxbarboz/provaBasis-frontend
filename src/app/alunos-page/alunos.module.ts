@@ -18,12 +18,15 @@ import { AlunosListagemComponent } from './alunos-listagem/alunos-listagem.compo
 import {TableModule} from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
 import {MultiSelectModule} from 'primeng/multiselect';
+import { AlunosDetalharComponent } from './alunos-detalhar/alunos-detalhar.component';
+import {ListboxModule} from 'primeng/listbox';
 
 @NgModule({
   declarations: [
     AlunosCadastrarComponent,
     AlunosPageComponent,
-    AlunosListagemComponent
+    AlunosListagemComponent,
+    AlunosDetalharComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +43,8 @@ import {MultiSelectModule} from 'primeng/multiselect';
     RouterModule,
     TableModule,
     HttpClientModule,
-    MultiSelectModule
+    MultiSelectModule,
+    ListboxModule
   ],
   exports: [
     AlunosCadastrarComponent,

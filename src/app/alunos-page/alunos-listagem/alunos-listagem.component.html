@@ -17,8 +17,8 @@
                     {{alunos[col.field]}}
             </td >
             <td>
-                <button pButton type="button" class="ui-button-raised ui-button-info"> <i class="pi pi-pencil"></i> </button>
-                <button pButton type="button" class="ui-button-raised ui-button-warning"> <i class="pi pi-plus"> </i></button>
+                <button pButton type="button" class="ui-button-raised ui-button-info" routerLink="cadastrar" [queryParams]=" alunos.id "> <i class="pi pi-pencil"></i> </button>
+                <button pButton type="button" class="ui-button-raised ui-button-success" routerLink="detalhar" (click)="addIdPesquisa(alunos.id)"> <i class="pi pi-plus"> </i></button>
                 
                 <button pButton type="button" class="ui-button-raised ui-button-danger" (click)="excluir(alunos.matricula)"> 
                     <i class="pi pi-times-circle"> </i>
