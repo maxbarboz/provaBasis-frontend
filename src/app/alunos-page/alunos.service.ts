@@ -19,4 +19,8 @@ export class AlunosService {
     return this.http.post('http://localhost:8080/api/alunos', aluno);
   }
 
+  excluir(matricula: string){
+    return this.http.delete(`http://localhost:8080/api/alunos/${matricula}`);
+  }
+
 }

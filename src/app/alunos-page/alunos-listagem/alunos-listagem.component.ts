@@ -29,4 +29,11 @@ export class AlunosListagemComponent implements OnInit {
       this.alunos = res;
     });
   }
+
+  excluir(matricula: string){
+    this.alunosService.excluir(matricula).subscribe( res => {
+      alert('Aluno excluido com sucesso!');
+      this.consultar();
+    });
+  }
 }

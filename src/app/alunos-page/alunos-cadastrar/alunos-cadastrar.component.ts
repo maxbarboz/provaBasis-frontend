@@ -2,6 +2,7 @@ import { DisciplinasService } from './../../disciplinas-page/disciplinas.service
 import { AlunosService } from './../alunos.service';
 import { Component, OnInit } from '@angular/core';
 import { Aluno } from 'src/app/model/aluno.model';
+import { SelectItem } from 'primeng/api/selectitem';
 
 @Component({
   selector: 'app-alunos-cadastrar',
@@ -11,18 +12,16 @@ import { Aluno } from 'src/app/model/aluno.model';
 export class AlunosCadastrarComponent implements OnInit{
 
 aluno: Aluno = new Aluno();
-disciplinas: any = [];
-arrayDisciplinas: any = [];
+disciplinas: SelectItem[];
 
 constructor(private alunosService: AlunosService, private disciplinasService: DisciplinasService) {
 }
 
 ngOnInit() {
-  this.disciplinasService.consultar().subscribe( res => {
-    console.log( res )
-    this.disciplinas = res;
-  });
-
+  this.disciplinasService.consultar().subscribe( (res: any[]) =>
+    this.disciplinas = res.map( disciplina => {
+        return { label: disciplina.nome , value: {"id": disciplina.id} }
+    }));
 }
 
   adicionar() {
