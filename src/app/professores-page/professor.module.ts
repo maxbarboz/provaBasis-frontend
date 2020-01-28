@@ -1,5 +1,3 @@
-import { DisciplinasPageComponent } from './disciplinas-page.component';
-import { DisciplinasListagemComponent } from './disciplinas-listagem/disciplinas-listagem.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,15 +13,16 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { DropdownModule } from 'primeng/dropdown';
 import {TableModule} from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
-import { DisciplinaCadastrarComponent } from './disciplina-cadastrar/disciplina-cadastrar.component';
-import {SliderModule} from 'primeng/slider';
-import {ToggleButtonModule} from 'primeng/togglebutton';
+import {MultiSelectModule} from 'primeng/multiselect';
+import { ProfessoresCadastrarComponent } from './professores-cadastrar/professores-cadastrar.component';
+import { ProfessoresListagemComponent } from './professores-listagem/professores-listagem.component';
+import { ProfessoresPageComponent } from './professores-page.component';
 
 @NgModule({
   declarations: [
-      DisciplinasListagemComponent,
-      DisciplinasPageComponent,
-      DisciplinaCadastrarComponent
+    ProfessoresCadastrarComponent,
+    ProfessoresListagemComponent,
+    ProfessoresPageComponent
   ],
   imports: [
     CommonModule,
@@ -40,16 +39,15 @@ import {ToggleButtonModule} from 'primeng/togglebutton';
     RouterModule,
     TableModule,
     HttpClientModule,
-    SliderModule,
-    ToggleButtonModule
+    MultiSelectModule
   ],
   exports: [
-      DisciplinasPageComponent,
-      DisciplinasListagemComponent,
-      DisciplinasPageComponent
+    ProfessoresCadastrarComponent,
+    ProfessoresListagemComponent,
+    ProfessoresPageComponent
   ],
   providers: [
   ]
 })
 
-export class DisciplinasModule { }
+export class ProfessoresModule { }

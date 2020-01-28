@@ -1,3 +1,4 @@
+import { DisciplinasService } from './../../disciplinas-page/disciplinas.service';
 import { AlunosService } from './../alunos.service';
 import { Component, OnInit } from '@angular/core';
 import { Aluno } from 'src/app/model/aluno.model';
@@ -10,20 +11,18 @@ import { Aluno } from 'src/app/model/aluno.model';
 export class AlunosCadastrarComponent implements OnInit{
 
 aluno: Aluno = new Aluno();
+disciplinas: any = [];
+arrayDisciplinas: any = [];
 
-cities1 = [
-    { label: 'Selecione a disciplina', value: null },
-    { label: 'Matemática', value: 1 },
-    { label: 'Português', value: 2 },
-    { label: 'Espanhol', value: 3 },
-    { label: 'Ed. Física', value: 4 },
-    { label: 'Geografia', value: 5 }
-];
-
-constructor(private alunosService: AlunosService) {
+constructor(private alunosService: AlunosService, private disciplinasService: DisciplinasService) {
 }
 
 ngOnInit() {
+  this.disciplinasService.consultar().subscribe( res => {
+    console.log( res )
+    this.disciplinas = res;
+  });
+
 }
 
   adicionar() {

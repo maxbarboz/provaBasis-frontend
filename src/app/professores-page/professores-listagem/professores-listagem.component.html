@@ -1,0 +1,17 @@
+<p-table [columns]="cols" [value]="professores" [rows]="5" [paginator]="true"
+[responsive]="true">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of cols">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-professores>
+        <tr>
+            <td  *ngFor="let col of cols">
+                    {{professores[col.field]}}
+            </td >
+        </tr>
+    </ng-template>
+</p-table>

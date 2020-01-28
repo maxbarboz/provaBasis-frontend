@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Disciplina } from 'src/app/model/disciplina.model';
 
 @Component({
   selector: 'app-disciplina-cadastrar',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisciplinaCadastrarComponent implements OnInit {
 
-  constructor() { }
+  disciplina: Disciplina;
+
+  constructor() { 
+    this.disciplina = new Disciplina();
+  }
 
   ngOnInit() {
   }

@@ -17,6 +17,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { AlunosListagemComponent } from './alunos-listagem/alunos-listagem.component';
 import {TableModule} from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
+import {MultiSelectModule} from 'primeng/multiselect';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     DropdownModule,
     RouterModule,
     TableModule,
-    HttpClientModule
+    HttpClientModule,
+    MultiSelectModule
   ],
   exports: [
     AlunosCadastrarComponent,

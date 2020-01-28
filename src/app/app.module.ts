@@ -13,9 +13,9 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { HomePageComponent } from './home-page/home-page.component';
 
 import {HttpModule} from '@angular/http';
-import { DisciplinasPageComponent } from './disciplinas-page/disciplinas-page.component';
-import { DisciplinaCadastrarComponent } from './disciplinas-page/disciplina-cadastrar/disciplina-cadastrar.component';
 import { DisciplinasModule } from './disciplinas-page/disciplinas.module';
+import { ProfessoresPageComponent } from './professores-page/professores-page.component';
+import { ProfessoresModule } from './professores-page/professor.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { DisciplinasModule } from './disciplinas-page/disciplinas.module';
     RouterModule,
     TabMenuModule,
     HttpModule,
-    DisciplinasModule
+    DisciplinasModule,
+    ProfessoresModule
   ],
   providers: [],
   bootstrap: [AppComponent]
