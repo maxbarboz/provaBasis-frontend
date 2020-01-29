@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { AlunosCadastrarComponent } from './alunos-page/alunos-cadastrar/alunos-cadastrar.component';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
@@ -12,10 +13,12 @@ import { SharedModule } from './shared/shared.module';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { HomePageComponent } from './home-page/home-page.component';
 
-import {HttpModule} from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { DisciplinasModule } from './disciplinas-page/disciplinas.module';
-import { ProfessoresPageComponent } from './professores-page/professores-page.component';
+import { ToastyModule } from 'ng2-toasty';
 import { ProfessoresModule } from './professores-page/professor.module';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,14 @@ import { ProfessoresModule } from './professores-page/professor.module';
     ButtonModule,
     RouterModule,
     TabMenuModule,
+    CoreModule,
     HttpModule,
     DisciplinasModule,
     ProfessoresModule
   ],
-  providers: [],
+  providers: [
+    ConfirmationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

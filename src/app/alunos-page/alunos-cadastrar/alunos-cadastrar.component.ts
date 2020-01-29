@@ -3,7 +3,7 @@ import { AlunosService } from './../alunos.service';
 import { Component, OnInit } from '@angular/core';
 import { Aluno } from 'src/app/model/aluno.model';
 import { SelectItem } from 'primeng/api/selectitem';
-import { ActivatedRoute } from '@angular/router';
+import { ToastyService } from 'ng2-toasty';
 
 @Component({
   selector: 'app-alunos-cadastrar',
@@ -16,7 +16,11 @@ aluno: Aluno = new Aluno();
 disciplinas: SelectItem[];
 alunoId: number;
 
-constructor(private alunosService: AlunosService, private disciplinasService: DisciplinasService, private route: ActivatedRoute) {
+constructor(
+  private alunosService: AlunosService,
+  private disciplinasService: DisciplinasService,
+  private toasty: ToastyService
+  ) {
 }
 
 ngOnInit() {
@@ -34,8 +38,8 @@ ngOnInit() {
 }
 
   adicionar() {
-    this.alunosService.adicionar(this.aluno).subscribe( aluno => {
-      alert('Aluno cadastrado!');
+    this.alunosService.adicionar(this.aluno).subscribe( 
+      aluno => {this.toasty.success('Aluno cadastrado com sucesso');
     });
   }
 }

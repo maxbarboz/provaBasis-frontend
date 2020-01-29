@@ -1,5 +1,7 @@
 import { AlunosService } from './../alunos.service';
 import { Component, OnInit } from '@angular/core';
+import { ToastyService } from 'ng2-toasty';
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-alunos-listagem',
@@ -11,7 +13,11 @@ export class AlunosListagemComponent implements OnInit {
   alunos: any = [];
   cols: any[] =  [];
 
-  constructor(private alunosService: AlunosService) {}
+  constructor(
+    private alunosService: AlunosService, 
+    private toasty: ToastyService,
+    private confirmation: ConfirmationService
+    ) {}
 
   ngOnInit()  {
     this.consultar();
@@ -31,9 +37,14 @@ export class AlunosListagemComponent implements OnInit {
   }
 
   excluir(matricula: string){
-    this.alunosService.excluir(matricula).subscribe( res => {
-      alert('Aluno excluido com sucesso!');
-      this.consultar();
+    this.confirmation.confirm({
+      message: 'Deseja realmente excluir?',
+      accept: () => {
+        this.alunosService.excluir(matricula).subscribe( res => {
+          this.toasty.success('Aluno excluido com sucesso');
+          this.consultar();
+        });
+      }
     });
   }
 
