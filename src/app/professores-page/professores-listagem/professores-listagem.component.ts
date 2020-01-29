@@ -31,4 +31,15 @@ export class ProfessoresListagemComponent implements OnInit {
       this.professores = res;
     });
   }
+
+  excluir(matricula: string){
+    this.professorService.excluir(matricula).subscribe( res => {
+      alert('Professor excluido com sucesso!');
+      this.consultar();
+    });
+  }
+
+  addIdPesquisa(id: number){
+    this.professorService.addIdPesquisa(id);
+  }
 }

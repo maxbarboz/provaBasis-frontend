@@ -17,12 +17,14 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import { ProfessoresCadastrarComponent } from './professores-cadastrar/professores-cadastrar.component';
 import { ProfessoresListagemComponent } from './professores-listagem/professores-listagem.component';
 import { ProfessoresPageComponent } from './professores-page.component';
+import { ProfessoresDetalharComponent } from './professores-detalhar/professores-detalhar.component';
 
 @NgModule({
   declarations: [
     ProfessoresCadastrarComponent,
     ProfessoresListagemComponent,
-    ProfessoresPageComponent
+    ProfessoresPageComponent,
+    ProfessoresDetalharComponent
   ],
   imports: [
     CommonModule,

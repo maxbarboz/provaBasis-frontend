@@ -10,6 +10,7 @@ import { DisciplinaCadastrarComponent } from './disciplinas-page/disciplina-cada
 import { ProfessoresPageComponent } from './professores-page/professores-page.component';
 import { ProfessoresCadastrarComponent } from './professores-page/professores-cadastrar/professores-cadastrar.component';
 import { DisciplinasDetalharComponent } from './disciplinas-page/disciplinas-detalhar/disciplinas-detalhar.component';
+import { ProfessoresDetalharComponent } from './professores-page/professores-detalhar/professores-detalhar.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,8 @@ const routes: Routes = [
   },
   { path: 'professores/cadastrar', component: ProfessoresCadastrarComponent
   },
+  { path: 'professores/detalhar', component: ProfessoresDetalharComponent
+  }
 ];
 
 @NgModule({

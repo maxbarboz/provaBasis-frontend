@@ -1,4 +1,6 @@
+import { ProfessoresService } from './../professor.service';
 import { Component, OnInit } from '@angular/core';
+import { Professor } from 'src/app/model/professor.model';
 
 @Component({
   selector: 'app-professores-cadastrar',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfessoresCadastrarComponent implements OnInit {
 
-  constructor() { }
+  professor: Professor = new Professor;
+  
+  constructor(private professorService: ProfessoresService) { }
 
   ngOnInit() {
+  }
+
+  adicionar(professor){
+    this.professorService.adicionar(this.professor).subscribe( professor => {
+      alert('Professor cadastrado!');
+    });
   }
 
 }

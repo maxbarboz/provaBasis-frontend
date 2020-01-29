@@ -3,29 +3,34 @@
         <div class="ui-g">
             <div class="ui-g-2"></div>
             <div style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" class="ui-g-8">
-                <h1> Detalhes da Disciplina </h1>
+                <h1> Detalhes do Professor </h1>
             </div>
             <div class="ui-g-2"></div>
             <div class="ui-g-2"></div>
             <div style="border-style:groove;" class="ui-g-8">
                 <div class="ui-g-12">
-                    Nome: <input type="text" pInputText value="{{ disciplina.nome }}" disabled name="nome"/>
+                    Nome: <input type="text" pInputText value="{{ professor.nome }}" disabled/>
                 </div>
 
                 <div class="ui-g-6">
-                    Id: <input type="text" pInputText value="{{ disciplina.id }}" disabled name="id"/>
+                    Id: <input type="text" pInputText value="{{ professor.id }}" disabled/>
                 </div>
 
                 <div class="ui-g-6">
-                    Carga Horária: <input type="text" pInputText value="{{ disciplina.cargaHoraria }}" disabled name="cargaHoraria"/>
+                    Matrícula: <input type="text" pInputText value="{{ professor.matricula }}" disabled/>
                 </div>
 
                 <div class="ui-g-12">
-                    Professor: <input type="text" pInputText disabled value="{{ disciplina.professor.nome }}" name="professor"/>
+                    Matérias:
+                    <ul>
+                        <li *ngFor="let disciplinas of professor.disciplinas">
+                            <input type="text" pInputText value="{{ disciplinas.nome }}" disabled/>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="ui-g-10" style="text-align: end;">
-                <a href="/disciplinas">Voltar para Disciplinas</a>
+                <a href="/professores">Voltar para Professores</a>
             </div>
         </div>
     </div>
