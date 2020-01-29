@@ -33,8 +33,8 @@
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label> Data de Nascimento </label>
         <p-calendar name="dataNascimento" dateFormat="dd/mm/yy"
-          [readonlyInput]="false" [showIcon]="true" [locale]="pt" 
-           #dataNascimento="ngModel" required [(ngModel)]="aluno.dataNascimento" value="alunos.dataNascimento"></p-calendar>
+          [readonlyInput]="false" [showIcon]="true"
+           #dataNascimento="ngModel" required [(ngModel)]="aluno.dataNascimento" value="aluno.dataNascimento"></p-calendar>
 
         <app-message [control]="dataNascimento" error="required"
           text="Informe a Data de Nascimento"></app-message>
