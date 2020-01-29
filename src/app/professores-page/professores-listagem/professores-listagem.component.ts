@@ -1,7 +1,7 @@
 import { ErrorHandlerService } from './../../core/error-handler.service';
 import { ConfirmationService } from 'primeng/api';
 import { ToastyService } from 'ng2-toasty';
-import { Component, OnInit, ErrorHandler } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProfessoresService } from '../professores.service';
 
 @Component({

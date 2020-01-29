@@ -3,7 +3,6 @@ import { AlunosService } from './../alunos.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastyService } from 'ng2-toasty';
 import { ConfirmationService } from 'primeng/api';
-import { error } from 'util';
 
 @Component({
   selector: 'app-alunos-listagem',

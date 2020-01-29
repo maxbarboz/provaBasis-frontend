@@ -22,7 +22,6 @@ export class ProfessoresDetalharComponent implements OnInit {
       this.professor = res.json();
     },
     err =>  {
-      console.log( err.json().message )
       this.errorHandler.handleError( err.json().message );
     }
     );
