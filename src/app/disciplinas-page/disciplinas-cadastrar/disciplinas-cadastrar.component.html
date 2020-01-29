@@ -21,24 +21,38 @@
         <div class="ui-g-12 ui-md-4 ui-fluid">
           <label> Ativa </label>
           <p-dropdown [options]="colsAtiva" [(ngModel)]="disciplina.ativa" placeholder="Status da disciplina" 
-          [showClear]="true" name="ativa" required></p-dropdown>
+          [showClear]="true" name="ativa" #ativa="ngModel" required></p-dropdown>
+
+          <app-message [control]="ativa" error="required"
+            text="Informe o status da disciplina"></app-message>
         </div>
   
         <div class="ui-g-12 ui-md-4 ui-fluid">
           <label> Professor Responsável </label>
           <p-dropdown [options]="professores" [(ngModel)]="disciplina.professor" placeholder="Selecione o Professor"
-          [showClear]="true" name="professores" required></p-dropdown>
+          [showClear]="true" name="professor" #professor="ngModel" required></p-dropdown>
+
+          <app-message [control]="professor" error="required"
+            text="Informe o professor responsável"></app-message>
+            
         </div>
 
         <div class="ui-g-12 ui-md-4 ui-fluid">
           <label> Carga Horária: </label>
-          <input pInputText type="text" name="cargaHoraria"
+          <input pInputText type="text" name="cargaHoraria" #cargaHoraria="ngModel"
             [(ngModel)]="disciplina.cargaHoraria" #cargaHoraria="ngModel" required minlength="1" maxlength="2">
-        </div>
+        
+            <app-message [control]="cargaHoraria" error="required"
+            text="Informe a carga horária"></app-message>
+          </div>
 
         <div class="ui-g-12 ui-md-4 ui-fluid">
             <label>Descrição</label>
-           <textarea [style]="{'size':'1000px'}" required [(ngModel)]="disciplina.descricao" name="descricao"></textarea>
+           <textarea [style]="{'size':'1000px'}" required [(ngModel)]="disciplina.descricao" 
+           name="descricao" #descricao="ngModel"></textarea>
+
+           <app-message [control]="descricao" error="required"
+            text="Informe uma descrição"></app-message>
           </div>
   
         <div class="ui-g-10">

@@ -8,6 +8,8 @@ import { Injectable } from '@angular/core';
 export class DisciplinasService {
 
   idDisciplina: number;
+  carregarDisciplina: boolean;
+
   // tslint:disable-next-line: deprecation
   constructor(private http: Http, private httpService: HttpClient) { }
 
@@ -24,10 +26,12 @@ export class DisciplinasService {
   }
   
   detalhar() {
+    this.carregarDisciplina = false;
     return this.http.get(`http://localhost:8080/api/disciplinas/detalhes/${this.idDisciplina}`);
   }
 
-  addIdPesquisa(id: number){
+  addIdPesquisa(id: number, carregarDisciplina: boolean){
     this.idDisciplina = id;
+    this.carregarDisciplina = carregarDisciplina;
   }
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DisciplinasService } from '../disciplinas.service';
+import { ToastyService } from 'ng2-toasty';
+import { ConfirmationService } from 'primeng/api';
+import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 
 @Component({
   selector: 'app-disciplinas-listagem',
@@ -11,7 +14,12 @@ export class DisciplinasListagemComponent implements OnInit {
   disciplina: any = [];
   cols: any[] =  [];
 
-  constructor(private disciplinasService: DisciplinasService) {}
+  constructor(
+    private disciplinasService: DisciplinasService,
+    private toasty: ToastyService,
+    private confirmation: ConfirmationService,
+    private errorHandler: ErrorHandlerService
+    ) {}
 
   ngOnInit()  {
     this.consultar();
@@ -31,14 +39,24 @@ export class DisciplinasListagemComponent implements OnInit {
   }
 
   excluir(id: number){
-    console.log( id )
-    this.disciplinasService.excluir(id).subscribe( res => {
-      alert('Disciplina excluida com sucesso!');
-      this.consultar();
+    this.confirmation.confirm({
+      message: 'Deseja realmente excluir?',
+      accept: () => {
+        this.disciplinasService.excluir(id).subscribe( res => {
+          this.toasty.success('Disciplina excluida com sucesso')
+          this.consultar();
+        },
+        err =>  {
+          this.errorHandler.handleError( err.json().message );
+        }
+        );
+      }
     });
-  }
+}
 
-  addIdPesquisa(id: number){
-    this.disciplinasService.addIdPesquisa(id);
+
+
+  addIdPesquisa(id: number, carregarDisciplina: boolean){
+    this.disciplinasService.addIdPesquisa(id, carregarDisciplina);
   }
 }

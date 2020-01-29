@@ -6,7 +6,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AlunosPageComponent } from './alunos-page/alunos-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DisciplinaCadastrarComponent } from './disciplinas-page/disciplina-cadastrar/disciplina-cadastrar.component';
+import { DisciplinasCadastrarComponent } from './disciplinas-page/disciplinas-cadastrar/disciplinas-cadastrar.component';
 import { ProfessoresPageComponent } from './professores-page/professores-page.component';
 import { ProfessoresCadastrarComponent } from './professores-page/professores-cadastrar/professores-cadastrar.component';
 import { DisciplinasDetalharComponent } from './disciplinas-page/disciplinas-detalhar/disciplinas-detalhar.component';
@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   { path: 'disciplinas', component: DisciplinasPageComponent
   },
-  { path: 'disciplinas/cadastrar', component: DisciplinaCadastrarComponent
+  { path: 'disciplinas/cadastrar', component: DisciplinasCadastrarComponent
   },
   { path: 'disciplinas/detalhar', component: DisciplinasDetalharComponent
   },

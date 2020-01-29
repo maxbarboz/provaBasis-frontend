@@ -16,11 +16,11 @@
                     {{disciplina[col.field]}}
             </td >
             <td>
-                <button pButton type="button" class="ui-button-raised ui-button-info" routerLink="cadastrar" (click)="addIdPesquisa(disciplina.id)"> <i class="pi pi-pencil"></i> </button>
-                <button pButton type="button" class="ui-button-raised ui-button-success" routerLink="detalhar" (click)="addIdPesquisa(disciplina.id)"> <i class="pi pi-plus"> </i></button>
+                <button type="button" class="cssEditar" routerLink="cadastrar" (click)="addIdPesquisa(disciplina.id, true)"> <i class="pi pi-pencil"></i> </button>
+                <button type="button" class="cssDetalhar" routerLink="detalhar" (click)="addIdPesquisa(disciplina.id)"> <i class="pi pi-eye"> </i></button>
     
-                <button pButton type="button" class="ui-button-raised ui-button-danger" (click)="excluir(disciplina.id)"> 
-                    <i class="pi pi-times-circle"> </i>
+                <button type="button" class="cssExcluir" (click)="excluir(disciplina.id)"> 
+                    <i class="pi pi-trash"> </i>
                 </button>
             </td>
         </tr>

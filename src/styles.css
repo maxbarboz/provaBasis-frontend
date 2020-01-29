@@ -22,14 +22,13 @@ label {
 .cssEditar{
   margin: 1px;
   size: 10px;
-  color: blue;
-  text-align: center;
+  color: green;
 }
 
 .cssDetalhar{
   margin: 1px;
   size: 10px;
-  color: green;
+  color: blue;
 }
 
 .cssExcluir{
