@@ -1,3 +1,4 @@
+import { ErrorHandlerService } from './core/error-handler.service';
 import { CoreModule } from './core/core.module';
 import { AlunosCadastrarComponent } from './alunos-page/alunos-cadastrar/alunos-cadastrar.component';
 import { RouterModule } from '@angular/router';
@@ -19,6 +20,7 @@ import { ToastyModule } from 'ng2-toasty';
 import { ProfessoresModule } from './professores-page/professor.module';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [

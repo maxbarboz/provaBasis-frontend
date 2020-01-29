@@ -1,6 +1,8 @@
+import { ErrorHandlerService } from './../core/error-handler.service';
 import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +13,14 @@ export class AlunosService {
   carregarAluno: boolean;
 
   // tslint:disable-next-line: deprecation
-  constructor(private http: Http, private httpService: HttpClient) { }
+  constructor(private http: Http, private httpService: HttpClient, private headlerError: ErrorHandlerService) { }
 
   consultar() {
     return this.httpService.get('http://localhost:8080/api/alunos');
   }
 
-  adicionar(aluno: any) {
-    return this.http.post('http://localhost:8080/api/alunos', aluno);
+  adicionar(aluno: any): Observable<{}> {
+    return this.http.post('http://localhost:8080/api/alunos', aluno)
   }
 
   excluir(matricula: string) {

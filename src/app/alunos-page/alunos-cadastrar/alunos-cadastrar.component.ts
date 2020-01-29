@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Aluno } from 'src/app/model/aluno.model';
 import { SelectItem } from 'primeng/api/selectitem';
 import { ToastyService } from 'ng2-toasty';
+import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 
 @Component({
   selector: 'app-alunos-cadastrar',
@@ -19,7 +20,8 @@ alunoId: number;
 constructor(
   private alunosService: AlunosService,
   private disciplinasService: DisciplinasService,
-  private toasty: ToastyService
+  private toasty: ToastyService,
+  private errorHandler: ErrorHandlerService
   ) {
 }
 
@@ -38,9 +40,13 @@ ngOnInit() {
 }
 
   adicionar() {
-    this.alunosService.adicionar(this.aluno).subscribe( 
-      aluno => {this.toasty.success('Aluno cadastrado com sucesso');
-    });
+    this.alunosService.adicionar(this.aluno).subscribe(
+      aluno => {this.toasty.success('Aluno cadastrado com sucesso')
+    },
+    err =>  {
+      this.errorHandler.handleError( err.json().message );
+    }
+    );
   }
 }
 
