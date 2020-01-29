@@ -31,21 +31,6 @@
       </div>
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
-        <label> Data de Nascimento </label>
-        <p-calendar name="dataNascimento" dateFormat="dd/mm/yy"
-          [readonlyInput]="false" [showIcon]="true"
-           #dataNascimento="ngModel" required [(ngModel)]="aluno.dataNascimento" value="aluno.dataNascimento"></p-calendar>
-
-        <app-message [control]="dataNascimento" error="required"
-          text="Informe a Data de Nascimento"></app-message>
-      </div>
-
-      <div class="ui-g-12 ui-md-4 ui-fluid">
-        <label> Disciplinas </label>
-        <p-multiSelect [options]="disciplinas" [(ngModel)]="aluno.disciplinas" name="disciplinas" [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
-      </div>
-
-      <div class="ui-g-12 ui-md-12 ui-fluid">
         <label>Matrícula</label>
         <input pInputText type="text" name="matricula"
           ngModel #matricula="ngModel" required minlength="6" maxlength="6" 
@@ -56,6 +41,21 @@
         <app-message [control]="matricula" error="minlength"
           text="Informe uma matrícula com {{ matricula.errors?.minlength?.requiredLength }} caracteres"></app-message>
 
+      </div>
+
+      <div class="ui-g-12 ui-md-4 ui-fluid">
+        <label> Data de Nascimento </label>
+        <p-calendar name="dataNascimento" dateFormat="dd/mm/yy"
+          [readonlyInput]="false" [showIcon]="true"
+           #dataNascimento="ngModel" required [(ngModel)]="aluno.dataNascimento" value="aluno.dataNascimento"></p-calendar>
+
+        <app-message [control]="dataNascimento" error="required"
+          text="Informe a Data de Nascimento"></app-message>
+      </div>
+
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label> Disciplinas </label>
+        <p-multiSelect [options]="disciplinas" [(ngModel)]="aluno.disciplinas" name="disciplinas" [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
       </div>
 
       <div class="ui-g-10">

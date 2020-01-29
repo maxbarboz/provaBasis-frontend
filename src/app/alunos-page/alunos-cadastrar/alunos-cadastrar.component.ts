@@ -44,6 +44,7 @@ ngOnInit() {
       aluno => {this.toasty.success('Aluno cadastrado com sucesso')
     },
     err =>  {
+      console.log( err )
       this.errorHandler.handleError( err.json().message );
     }
     );

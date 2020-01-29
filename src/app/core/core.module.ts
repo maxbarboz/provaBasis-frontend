@@ -6,8 +6,6 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 import { ErrorHandlerService } from './error-handler.service';
 
-
-
 @NgModule({
   declarations: [],
   imports: [

@@ -17,7 +17,7 @@
   
         </div>
   
-        <div class="ui-md-4 ui-fluid">
+        <div class="ui-md-6 ui-fluid">
           <label>Matrícula</label>
           <input pInputText type="text" name="matricula"
             ngModel #matricula="ngModel" required minlength="6" maxlength="6" 
@@ -30,7 +30,7 @@
   
         </div>
   
-        <div class="ui-md-4 ui-fluid">
+        <div class="ui-md-6 ui-fluid">
           <label> Data de Nascimento </label>
           <p-calendar  name="dataNascimento" dateFormat="dd/mm/yy"
             [readonlyInput]="false" [showIcon]="true"
@@ -40,7 +40,7 @@
             text="Informe a Data de Nascimento"></app-message>
         </div>
   
-        <div class="ui-md-4 ui-fluid">
+        <div class="ui-md-12 ui-fluid">
           <label> Área </label>
           <textarea [(ngModel)]="professor.area" name="area"></textarea>
         </div>

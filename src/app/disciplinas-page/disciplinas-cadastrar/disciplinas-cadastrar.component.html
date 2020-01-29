@@ -6,7 +6,7 @@
           <h1 class="pi pi-save">Cadastro de Disciplina</h1>
         </div>
   
-        <div class="ui-g-12 ui-md-12 ui-fluid">
+        <div class="ui-g-12 ui-md-10 ui-fluid">
           <label>Nome da disciplina</label>
           <input pInputText type="text" name="nome"
             [(ngModel)]="disciplina.nome" #nome="ngModel" required minlength="4">
@@ -17,8 +17,17 @@
             text="Mínimo de {{ nome.errors?.minlength?.requiredLength }} caracteres"></app-message>
   
         </div>
+
+        <div class="ui-g-12 ui-md-2 ui-fluid">
+          <label> Carga Horária: </label>
+          <input pInputText type="text" name="cargaHoraria" #cargaHoraria="ngModel"
+            [(ngModel)]="disciplina.cargaHoraria" #cargaHoraria="ngModel" required minlength="1" maxlength="2">
+        
+            <app-message [control]="cargaHoraria" error="required"
+            text="Informe a carga horária"></app-message>
+          </div>
   
-        <div class="ui-g-12 ui-md-4 ui-fluid">
+        <div class="ui-g-12 ui-md-6 ui-fluid">
           <label> Ativa </label>
           <p-dropdown [options]="colsAtiva" [(ngModel)]="disciplina.ativa" placeholder="Status da disciplina" 
           [showClear]="true" name="ativa" #ativa="ngModel" required></p-dropdown>
@@ -27,7 +36,7 @@
             text="Informe o status da disciplina"></app-message>
         </div>
   
-        <div class="ui-g-12 ui-md-4 ui-fluid">
+        <div class="ui-g-12 ui-md-6 ui-fluid">
           <label> Professor Responsável </label>
           <p-dropdown [options]="professores" [(ngModel)]="disciplina.professor" placeholder="Selecione o Professor"
           [showClear]="true" name="professor" #professor="ngModel" required></p-dropdown>
@@ -37,18 +46,9 @@
             
         </div>
 
-        <div class="ui-g-12 ui-md-4 ui-fluid">
-          <label> Carga Horária: </label>
-          <input pInputText type="text" name="cargaHoraria" #cargaHoraria="ngModel"
-            [(ngModel)]="disciplina.cargaHoraria" #cargaHoraria="ngModel" required minlength="1" maxlength="2">
-        
-            <app-message [control]="cargaHoraria" error="required"
-            text="Informe a carga horária"></app-message>
-          </div>
-
-        <div class="ui-g-12 ui-md-4 ui-fluid">
+        <div class="ui-g-12 ui-md-12 ui-fluid">
             <label>Descrição</label>
-           <textarea [style]="{'size':'1000px'}" required [(ngModel)]="disciplina.descricao" 
+           <textarea required [(ngModel)]="disciplina.descricao" 
            name="descricao" #descricao="ngModel"></textarea>
 
            <app-message [control]="descricao" error="required"
