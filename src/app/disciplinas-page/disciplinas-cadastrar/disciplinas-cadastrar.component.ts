@@ -1,6 +1,6 @@
 import { ErrorHandlerService } from '../../core/error-handler.service';
 import { DisciplinasService } from '../disciplinas.service';
-import { ProfessoresService } from '../../professores-page/professor.service';
+import { ProfessoresService } from '../../professores-page/professores.service';
 import { Component, OnInit } from '@angular/core';
 import { Disciplina } from 'src/app/model/disciplina.model';
 import { SelectItem } from 'primeng/api/selectitem';

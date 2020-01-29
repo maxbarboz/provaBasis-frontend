@@ -17,7 +17,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { HttpModule } from '@angular/http';
 import { DisciplinasModule } from './disciplinas-page/disciplinas.module';
 import { ToastyModule } from 'ng2-toasty';
-import { ProfessoresModule } from './professores-page/professor.module';
+import { ProfessoresModule } from './professores-page/professores.module';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';

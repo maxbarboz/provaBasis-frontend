@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ProfessoresService } from '../professor.service';
+import { ErrorHandlerService } from './../../core/error-handler.service';
+import { ConfirmationService } from 'primeng/api';
+import { ToastyService } from 'ng2-toasty';
+import { Component, OnInit, ErrorHandler } from '@angular/core';
+import { ProfessoresService } from '../professores.service';
 
 @Component({
   selector: 'app-professores-listagem',
@@ -8,10 +11,15 @@ import { ProfessoresService } from '../professor.service';
 })
 export class ProfessoresListagemComponent implements OnInit {
 
-  professores: any = [];
+  professor: any = [];
   cols: any[] =  [];
 
-  constructor(private professorService: ProfessoresService) {}
+  constructor(
+    private professorService: ProfessoresService,
+    private toasty: ToastyService,
+    private confirmation: ConfirmationService,
+    private errorHandler: ErrorHandlerService
+    ) {}
 
   ngOnInit()  {
     this.consultar();
@@ -28,18 +36,28 @@ export class ProfessoresListagemComponent implements OnInit {
   consultar(){
     this.professorService.consultar().subscribe( res => {
       console.log( res )
-      this.professores = res;
+      this.professor = res;
     });
   }
 
   excluir(matricula: string){
-    this.professorService.excluir(matricula).subscribe( res => {
-      alert('Professor excluido com sucesso!');
-      this.consultar();
+    this.confirmation.confirm({
+      message: 'Deseja realmente excluir?',
+      accept: () => {
+        this.professorService.excluir(matricula).subscribe( res => {
+          this.toasty.success('Professor excluido com sucesso')
+          this.consultar();
+        },
+        err =>  {
+          console.log( err.json().message )
+          this.errorHandler.handleError( err.json().message );
+        }
+        );
+      }
     });
   }
 
-  addIdPesquisa(id: number){
-    this.professorService.addIdPesquisa(id);
+  addIdPesquisa(id: number, carregarProfessor: boolean){
+    this.professorService.addIdPesquisa(id, carregarProfessor);
   }
 }

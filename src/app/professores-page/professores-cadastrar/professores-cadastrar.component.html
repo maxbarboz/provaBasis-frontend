@@ -9,12 +9,11 @@
         <div class="ui-g-12 ui-md-12 ui-fluid">
           <label>Nome</label>
           <input pInputText type="text" name="nome"
-            [(ngModel)]="professor.nome" #nome="ngModel" required minlength="5" placeholder="Informe o nome">
+            [(ngModel)]="professor.nome" #nome="ngModel" required
+            placeholder="Informe o nome" value="professor.nome">
   
           <app-message [control]="nome" error="required"
             text="Informe o nome"></app-message>
-          <app-message [control]="nome" error="minlength"
-            text="Mínimo de {{ nome.errors?.minlength?.requiredLength }} caracteres"></app-message>
   
         </div>
   
@@ -22,7 +21,7 @@
           <label>Matrícula</label>
           <input pInputText type="text" name="matricula"
             ngModel #matricula="ngModel" required minlength="6" maxlength="6" 
-             [(ngModel)]="professor.matricula" value="alunos.matricula">
+             [(ngModel)]="professor.matricula" value="professor.matricula">
   
           <app-message [control]="matricula" error="required"
             text="Informe a matrícula"></app-message>
@@ -33,7 +32,7 @@
   
         <div class="ui-md-4 ui-fluid">
           <label> Data de Nascimento </label>
-          <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="1950:2020" name="dataNascimento" dateFormat="dd/mm/yy"
+          <p-calendar  name="dataNascimento" dateFormat="dd/mm/yy"
             [readonlyInput]="false" [showIcon]="true"
             ngModel #dataNascimento="ngModel" required [(ngModel)]="professor.dataNascimento"></p-calendar>
   
@@ -43,7 +42,7 @@
   
         <div class="ui-md-4 ui-fluid">
           <label> Área </label>
-          <textarea [(ngModel)]="professor.area" name="area" required></textarea>
+          <textarea [(ngModel)]="professor.area" name="area"></textarea>
         </div>
   
         <div class="ui-g-10">
