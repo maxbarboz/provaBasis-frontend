@@ -18,3 +18,21 @@ label {
     margin: 0 auto;
   }
 }
+
+.cssEditar{
+  margin: 1px;
+  size: 10px;
+  color: blue;
+}
+
+.cssDetalhar{
+  margin: 1px;
+  size: 10px;
+  color: green;
+}
+
+.cssExcluir{
+  margin: 1px;
+  size: 10px;
+  color: red;
+}

@@ -9,7 +9,7 @@
       <div class="ui-g-12 ui-md-12 ui-fluid">
         <label>Nome</label>
         <input pInputText type="text" name="nome"
-          [(ngModel)]="aluno.nome" #nome="ngModel" required minlength="5" value="alunos.nome">
+          [(ngModel)]="aluno.nome" #nome="ngModel" required minlength="4" value="alunos.nome">
 
         <app-message [control]="nome" error="required"
           text="Informe o nome"></app-message>
@@ -32,9 +32,9 @@
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label> Data de Nascimento </label>
-        <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="1950:2020" name="dataNascimento" dateFormat="dd/mm/yy"
-          [readonlyInput]="false" [showIcon]="true"
-          ngModel #dataNascimento="ngModel" required [(ngModel)]="aluno.dataNascimento" value="alunos.dataNascimento"></p-calendar>
+        <p-calendar name="dataNascimento" dateFormat="dd/mm/yy"
+          [readonlyInput]="false" [showIcon]="true" [locale]="pt" 
+           #dataNascimento="ngModel" required [(ngModel)]="aluno.dataNascimento" value="alunos.dataNascimento"></p-calendar>
 
         <app-message [control]="dataNascimento" error="required"
           text="Informe a Data de Nascimento"></app-message>

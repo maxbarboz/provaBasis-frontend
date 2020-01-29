@@ -15,8 +15,21 @@ export class AlunosCadastrarComponent implements OnInit{
 aluno: Aluno = new Aluno();
 disciplinas: SelectItem[];
 alunoId: number;
+pt: any;
 
 constructor(private alunosService: AlunosService, private disciplinasService: DisciplinasService, private route: ActivatedRoute) {
+  this.pt = {
+    firstDayOfWeek: 0,
+    dayNames: ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"],
+    dayNamesShort: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
+    dayNamesMin: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+    monthNames: [ "Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezemrbo" ],
+    monthNamesShort: [ "Jan", "Fev", "Mar", "Abr", "Mai", "Jun","Jul", "Ago", "Set", "Out", "Nov", "Dec" ],
+    today: 'Hoje',
+    clear: 'Limpar',
+    dateFormat: 'dd/mm/yy',
+    weekHeader: 'Sem'
+  };
 }
 
 ngOnInit() {
@@ -25,10 +38,12 @@ ngOnInit() {
         return { label: disciplina.nome , value: {"id": disciplina.id} }
     }));
 
-  this.alunosService.detalhar().subscribe( ( res =>{
-    this.aluno = res.json();
-    console.log( this.aluno );
-  }));
+  if(this.alunosService.carregarAluno == true){
+    this.alunosService.detalhar().subscribe( ( res =>{
+      this.aluno = res.json();
+      console.log( this.aluno );
+    }));
+  }
 }
 
   adicionar() {

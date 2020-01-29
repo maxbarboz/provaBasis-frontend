@@ -37,7 +37,7 @@ export class AlunosListagemComponent implements OnInit {
     });
   }
 
-  addIdPesquisa(id: number){
-    this.alunosService.addIdPesquisa(id);
+  addIdPesquisa(id: number, carregarAluno: boolean){
+    this.alunosService.addIdPesquisa(id, carregarAluno);
   }
 }
