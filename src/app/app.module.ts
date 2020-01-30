@@ -16,7 +16,6 @@ import { ProfessoresModule } from './professores-page/professores.module';
 import { AlunosModule } from './alunos-page/alunos.module';
 import { CoreModule } from './core/core.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,

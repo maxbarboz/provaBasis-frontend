@@ -16,6 +16,7 @@ export class AlunosCadastrarComponent implements OnInit{
 aluno: Aluno = new Aluno();
 disciplinas: SelectItem[];
 alunoId: number;
+editar: boolean = false;
 
 constructor(
   private alunosService: AlunosService,
@@ -34,20 +35,29 @@ ngOnInit() {
   if(this.alunosService.carregarAluno == true) {
     this.alunosService.detalhar().subscribe( ( res =>{
       this.aluno = res.json();
-      console.log( this.aluno );
+      this.editar = true;
     }));
   }
 }
 
   adicionar() {
-    this.alunosService.adicionar(this.aluno).subscribe(
-      aluno => {this.toasty.success('Aluno cadastrado com sucesso')
-    },
-    err =>  {
-      console.log( err )
-      this.errorHandler.handleError( err.json().message );
+    if(this.editar == true) {
+      this.alunosService.editar(this.aluno).subscribe(
+        aluno => {this.toasty.success('Edição feita com sucesso')
+      },
+      err =>  {
+        this.errorHandler.handleError( err.json().message );
+      }
+      );
+    }else{
+      this.alunosService.adicionar(this.aluno).subscribe(
+        aluno => {this.toasty.success('Aluno cadastrado com sucesso')
+      },
+      err =>  {
+        this.errorHandler.handleError( err.json().message );
+      }
+      );
     }
-    );
   }
 }
 

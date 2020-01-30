@@ -21,7 +21,7 @@
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label>CPF</label>
         <input pInputText type="text" name="cpf"
-        [(ngModel)]="aluno.cpf" #cpf="ngModel" required minlength="5" value="alunos.cpf" minlength="11" maxlength="11" placeholder="000.000.000-00">
+        [(ngModel)]="aluno.cpf" #cpf="ngModel" required minlength="5" minlength="11" maxlength="11" placeholder="000.000.000-00">
 
         <app-message [control]="cpf" error="required"
           text="Informe o CPF"></app-message>
@@ -55,7 +55,8 @@
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label> Disciplinas </label>
-        <p-multiSelect [options]="disciplinas" [(ngModel)]="aluno.disciplinas" name="disciplinas" [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
+        <p-multiSelect [options]="disciplinas" [(ngModel)]="aluno.disciplinas" name="disciplinas" 
+        [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
       </div>
 
       <div class="ui-g-10">

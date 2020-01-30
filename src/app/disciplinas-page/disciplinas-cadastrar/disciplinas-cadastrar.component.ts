@@ -15,7 +15,7 @@ export class DisciplinasCadastrarComponent implements OnInit {
 
   disciplina: Disciplina = new Disciplina();
   professores: SelectItem[];
-
+  editar: boolean = false;
   colsAtiva: any = [];
 
   constructor(
@@ -38,7 +38,7 @@ export class DisciplinasCadastrarComponent implements OnInit {
     if(this.disciplinaService.carregarDisciplina == true) {
       this.disciplinaService.detalhar().subscribe( ( res =>{
         this.disciplina = res.json();
-        console.log( this.disciplina );
+        this.editar = true;
       }));
     }
 
@@ -47,13 +47,23 @@ export class DisciplinasCadastrarComponent implements OnInit {
   ngOnInit() {
   }
 
+
   adicionar() {
-    this.disciplinaService.adicionar(this.disciplina).subscribe( disciplina => {
-      this.toasty.success('Disciplina cadastrada com sucesso')
-    },
-    err =>  {
-      this.errorHandler.handleError( err.json().message );
-    });
+    if(this.editar == true){
+      this.disciplinaService.editar(this.disciplina).subscribe( disciplina => {
+        this.toasty.success('Edição feita com sucesso')
+      },
+      err =>  {
+        this.errorHandler.handleError( err.json().message );
+      });
+    }else{
+      this.disciplinaService.adicionar(this.disciplina).subscribe( disciplina => {
+        this.toasty.success('Disciplina cadastrada com sucesso')
+      },
+      err =>  {
+        this.errorHandler.handleError( err.json().message );
+      });
+    }
   }
 
 }

@@ -27,6 +27,10 @@ export class DisciplinasService {
     return this.http.post('http://localhost:8080/api/disciplinas', disciplina);
   }
 
+  editar(disciplina: any) {
+    return this.http.put('http://localhost:8080/api/disciplinas', disciplina);
+  }
+
   excluir(id: number) {
     return this.http.delete(`http://localhost:8080/api/disciplinas/${id}`);
   }

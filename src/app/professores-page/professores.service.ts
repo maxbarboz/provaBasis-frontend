@@ -30,6 +30,10 @@ export class ProfessoresService {
     return this.http.post('http://localhost:8080/api/professores', professor);
   }
 
+  editar(professor: any) {
+    return this.http.put('http://localhost:8080/api/professores', professor);
+  }
+
   detalhar() {
     this.carregarProfessor = false;
 
