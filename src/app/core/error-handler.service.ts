@@ -17,7 +17,6 @@ export class ErrorHandlerService{
       errorMessage = errorResponse
     }else{
       errorMessage = 'Erro ao processar serviço remoto. Tente novamente.';
-      console.log('Ocorreu um erro', errorResponse);
     }
     
     this.toasty.error(errorMessage);

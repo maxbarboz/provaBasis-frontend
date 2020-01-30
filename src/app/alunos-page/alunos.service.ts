@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,12 @@ export class AlunosService {
   carregarAluno: boolean;
 
   // tslint:disable-next-line: deprecation
-  constructor(private http: Http, private httpService: HttpClient, private headlerError: ErrorHandlerService) { }
+  constructor(
+    private http: Http,
+    private httpService: HttpClient, 
+    private route: ActivatedRoute,
+    private router: Router
+    ) { }
 
   consultar() {
     return this.httpService.get('http://localhost:8080/api/alunos');
@@ -29,6 +35,12 @@ export class AlunosService {
 
   detalhar() {
     this.carregarAluno = false;
+    
+    if( this.idAluno == undefined ){
+      this.router.navigate(['/alunos'])
+      return this.http.get('http://localhost:8080/api/alunos');
+    }
+
     return this.http.get(`http://localhost:8080/api/alunos/detalhes/${this.idAluno}`);
   }
 

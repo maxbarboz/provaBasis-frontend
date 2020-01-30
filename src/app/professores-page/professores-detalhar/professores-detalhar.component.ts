@@ -1,4 +1,3 @@
-import { ErrorHandlerService } from './../../core/error-handler.service';
 import { ProfessoresService } from '../professores.service';
 import { Component, OnInit } from '@angular/core';
 import { Professor } from 'src/app/model/professor.model';
@@ -13,18 +12,13 @@ export class ProfessoresDetalharComponent implements OnInit {
   professor = new Professor;
 
   constructor(
-    private professoresService: ProfessoresService,
-    private errorHandler: ErrorHandlerService
+    private professoresService: ProfessoresService
     ) {}
 
   ngOnInit() {
     this.professoresService.detalhar().subscribe( res => {
       this.professor = res.json();
-    },
-    err =>  {
-      this.errorHandler.handleError( err.json().message );
-    }
-    );
+    });
   }
 
 }

@@ -1,6 +1,7 @@
 import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,12 @@ export class DisciplinasService {
   carregarDisciplina: boolean;
 
   // tslint:disable-next-line: deprecation
-  constructor(private http: Http, private httpService: HttpClient) { }
+  constructor(
+    private http: Http,
+    private httpService: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router
+    ) { }
 
   consultar() {
     return this.httpService.get('http://localhost:8080/api/disciplinas');
@@ -27,6 +33,12 @@ export class DisciplinasService {
   
   detalhar() {
     this.carregarDisciplina = false;
+
+    if( this.idDisciplina == undefined ){
+      this.router.navigate(['/disciplinas'])
+      return this.http.get('http://localhost:8080/api/disciplinas')
+    }
+
     return this.http.get(`http://localhost:8080/api/disciplinas/detalhes/${this.idDisciplina}`);
   }
 
