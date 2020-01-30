@@ -4,9 +4,8 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-message',
   template: `
-    <div *ngIf="temErro()" style="color: #B22222;" class="pi pi-exclamation-triangle
-     alert alert-warning" role="alert">
-      {{ text }}
+    <div *ngIf="temErro()">
+      <p-message severity="error" text="{{ text }}"></p-message>  
     </div>
   `,
   styles: ['./message.component.css']
