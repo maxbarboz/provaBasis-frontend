@@ -18,7 +18,6 @@ export class ProfessoresDetalharComponent implements OnInit {
   ngOnInit() {
     this.professoresService.detalhar().subscribe( res => {
       this.professor = res.json();
-      console.log( this.professor )
     });
   }
 

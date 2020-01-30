@@ -46,7 +46,13 @@ ngOnInit() {
         aluno => {this.toasty.success('Edição feita com sucesso')
       },
       err =>  {
-        this.errorHandler.handleError( err.json().message );
+        if( !err.json().errors ){
+          console.log( err.json().message )
+          this.errorHandler.handleError( err.json().message );
+        }else{
+          console.log(err.json().errors[0].defaultMessage )
+          this.errorHandler.handleError( err.json().errors[0].defaultMessage );
+        }
       }
       );
     }else{
@@ -54,7 +60,13 @@ ngOnInit() {
         aluno => {this.toasty.success('Aluno cadastrado com sucesso')
       },
       err =>  {
-        this.errorHandler.handleError( err.json().message );
+        if( !err.json().errors ){
+          console.log( err.json().message )
+          this.errorHandler.handleError( err.json().message );
+        }else{
+          console.log(err.json().errors[0].defaultMessage )
+          this.errorHandler.handleError( err.json().errors[0].defaultMessage );
+        }
       }
       );
     }
