@@ -17,11 +17,11 @@
                 </div>
 
                 <div class="ui-g-6">
-                    Carga Horária: <input type="text" pInputText value="{{ disciplina.cargaHoraria }}" disabled name="carga"/>
+                    Carga Horária: <input type="text" pInputText value="{{ disciplina.cargaHoraria }}" disabled name="cargaHoraria"/>
                 </div>
 
                 <div class="ui-g-12">
-                    Professor: <input type="text" pInputText value="{{ disciplina.professor.nome }}" disabled name="professorNome"/>
+                    Professor: <input type="text" pInputText value="{{ disciplina.professor?.nome }}" disabled name="professorNome"/>
                 </div>
             </div>
             <div class="ui-g-10" style="text-align: end;">
