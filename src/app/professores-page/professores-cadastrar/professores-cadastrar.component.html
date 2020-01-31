@@ -10,7 +10,7 @@
           <label>Nome</label>
           <input pInputText type="text" name="nome"
             [(ngModel)]="professor.nome" #nome="ngModel" required
-            placeholder="Informe o nome" value="professor.nome">
+            placeholder="Informe o nome" value="professor.nome" minlength="1" maxlength="50">
   
           <app-message [control]="nome" error="required"
             text="Informe o nome"></app-message>
@@ -46,7 +46,7 @@
   
         <div class="ui-md-12 ui-fluid">
           <label> Área </label>
-          <textarea [(ngModel)]="professor.area" name="area"></textarea>
+          <textarea [(ngModel)]="professor.area" name="area" minlength="1" maxlength="200"></textarea>
         </div>
   
         <div class="ui-g-10">
