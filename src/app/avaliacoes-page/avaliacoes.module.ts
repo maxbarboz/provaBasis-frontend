@@ -13,15 +13,11 @@ import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 import { AvaliacoesListagemComponent } from './avaliacoes-listagem/avaliacoes-listagem.component';
 import {CalendarModule} from 'primeng/calendar';
-import { AvaliacoesEditarComponent } from './avaliacoes-editar/avaliacoes-editar.component';
-import { NotasPageComponent } from './notas-page/notas-page.component';
 
 @NgModule({
   declarations: [
      AvaliacoesPageComponent,
-     AvaliacoesListagemComponent,
-     AvaliacoesEditarComponent,
-     NotasPageComponent
+     AvaliacoesListagemComponent
   ],
   imports: [
     CommonModule,

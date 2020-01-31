@@ -20,10 +20,6 @@ export class AvaliacoesService {
     return this.httpService.get('http://localhost:8080/api/avaliacoes');
   }
 
-  consultarNotas() {
-    return this.httpService.get(`http://localhost:8080/api/avaliacoes/detalhes/${this.idAvaliacao}`);
-  }
-
   detalhar() {
     return this.httpService.get(`http://localhost:8080/api/avaliacoes/detalhes/${this.idAvaliacao}`);
   }

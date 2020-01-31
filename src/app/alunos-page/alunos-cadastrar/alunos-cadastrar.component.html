@@ -9,7 +9,7 @@
       <div class="ui-g-12 ui-md-12 ui-fluid">
         <label>Nome</label>
         <input pInputText type="text" name="nome"
-          [(ngModel)]="aluno.nome" #nome="ngModel" required minlength="4" value="alunos.nome">
+          [(ngModel)]="aluno.nome" #nome="ngModel" required minlength="4" value="aluno.nome">
 
         <app-message [control]="nome" error="required"
           text="Informe o nome"></app-message>
@@ -34,7 +34,7 @@
         <label>Matrícula</label>
         <input pInputText type="text" name="matricula"
           ngModel #matricula="ngModel" required minlength="6" maxlength="6" 
-           [(ngModel)]="aluno.matricula" value="alunos.matricula">
+           [(ngModel)]="aluno.matricula" value="aluno.matricula">
 
         <app-message [control]="matricula" error="required"
           text="Informe a matrícula"></app-message>
@@ -45,11 +45,12 @@
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label> Data de Nascimento </label>
-        <p-calendar name="dataNascimento" dateFormat="dd/mm/yy"
+        <!-- <p-calendar  [yearNavigator]="true" yearRange="2000:2030" name="dataNascimento" dateFormat="dd/mm/yy"
           [readonlyInput]="false" [showIcon]="true"
-           #dataNascimento="ngModel" required [(ngModel)]="aluno.dataNascimento" value="aluno.dataNascimento"></p-calendar>
-
-        <app-message [control]="dataNascimento" error="required"
+           #dataNascimento="ngModel" required [(ngModel)]="aluno.dataNascimento" value="aluno.dataNascimento"></p-calendar> -->
+           <input type="date" name="dateofbirth" id="dateofbirth" [(ngModel)]="aluno.dataNascimento"
+          name="dataNascimento" #dataNascimento="ngModel" required>
+         <app-message [control]="dataNascimento" error="required"
           text="Informe a Data de Nascimento"></app-message>
       </div>
 

@@ -1,3 +1,5 @@
+import { AlunosService } from './../alunos-page/alunos.service';
+import { SelectItem } from 'primeng/api/selectitem';
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 import { ToastyService } from 'ng2-toasty';
 import { AvaliacoesService } from './avaliacoes.service';
@@ -12,29 +14,29 @@ import { Avaliacao } from '../model/avaliacao.model';
 })
 export class AvaliacoesPageComponent implements OnInit {
 
-  disciplinas: any;
   avaliacao: Avaliacao = new Avaliacao;
+  disciplina: SelectItem[];
 
   constructor(
+    private avaliacoesService: AvaliacoesService,
+    private alunosService: AlunosService,
     private disciplinasService: DisciplinasService,
-    private avaliacaoService: AvaliacoesService,
-    private toasty: ToastyService,
-    private errorHandler: ErrorHandlerService
-    ) { }
+    private toasty: ToastyService
+  ) { }
 
   ngOnInit() {
     this.disciplinasService.consultar().subscribe( (res: any[]) =>
-    this.disciplinas = res.map( disciplina => {
-      return { label:  disciplina.nome, value: {"id": disciplina.id} }
+    this.disciplina = res.map( disciplina => {
+      console.log(disciplina)
+        return { label: disciplina.nome , value: {"id": disciplina.id} }
     }));
   }
-  
+
   adicionar(){
-      this.avaliacaoService.adicionar(this.avaliacao).subscribe(
-        resp => {
-          this.toasty.success('Avaliação cadastrada com sucesso')
-        }, err =>  {
-            this.errorHandler.handleError( err.json().message );
-        })
+    console.log( this.avaliacao )
+    this.avaliacoesService.adicionar(this.avaliacao).subscribe(
+      avaliacao => {
+        this.toasty.success('Edição feita com sucesso')
+      })
   }
 }

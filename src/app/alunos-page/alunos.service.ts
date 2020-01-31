@@ -26,6 +26,8 @@ export class AlunosService {
   }
 
   adicionar(aluno: any): Observable<{}> {
+
+    console.log( aluno )
     return this.http.post('http://localhost:8080/api/alunos', aluno)
   }
 

@@ -17,7 +17,7 @@ aluno: Aluno = new Aluno();
 disciplinas: SelectItem[];
 alunoId: number;
 editar: boolean = false;
-
+date6: Date;
 constructor(
   private alunosService: AlunosService,
   private disciplinasService: DisciplinasService,
@@ -57,7 +57,8 @@ ngOnInit() {
       );
     }else{
       this.alunosService.adicionar(this.aluno).subscribe(
-        aluno => {this.toasty.success('Aluno cadastrado com sucesso')
+        aluno => {
+          this.toasty.success('Aluno cadastrado com sucesso')
       },
       err =>  {
         if( !err.json().errors ){

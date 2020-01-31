@@ -1,38 +1,54 @@
 <div class="container">
+    <form #formAvaliacao="ngForm" autocomplete="off">
   
-    <div class="ui-g">
-          <div class="ui-g-12 ui-md-12">
-              <h1><i class="pi pi-copy"> Avaliações</i></h1>
-              <h5> Nova avaliação </h5>
-          </div>
-          <form #formAvaliacao="ngForm" autocomplete="off">
-             <div class="ui-g-12 ui-md-3 ui-fluid">
-               <label> Nome </label>
-               <input type="text" pInputText required [(ngModel)]="avaliacao.nome" name="nome"> 
-             </div>
+      <div class="ui-g">
+        <div class="ui-g-3"></div>
 
-             <div class="ui-g-12 ui-md-3 ui-fluid">
-               <label> Informe a data </label>
-               <p-calendar dateFormat="dd.mm.yy" required 
-               [(ngModel)]="avaliacao.data" name="data"></p-calendar>
-             </div>
-               
-             <div class="ui-g-12 ui-md-3 ui-fluid">
-                <label> Selecione a disciplina</label>
-               <p-dropdown [options]="disciplinas" required placeholder="Opções"
-               [(ngModel)]="avaliacao.disciplina" name="disciplinas"></p-dropdown>
-             </div>
-               
-             <div class="ui-g-12 ui-md-3 ui-fluid">
-                <label> Salvar: </label>
-               <button pButton type="submit" label=">>" [disabled]="formAvaliacao.invalid" 
-               (click)="adicionar()"></button>
-             </div>
+        <div class="ui-g-6">
 
-         </form>
+            <div class="ui-g-12 ui-md-12">
+                <h1 class="pi pi-save">Cadastro de Avaliação</h1>
+              </div>
 
+            <div class="ui-g-6 ui-fluid">
+            <label>Valor da Avaliação</label>
+            <input pInputText type="text" name="nota"
+                [(ngModel)]="avaliacao.nota" #nota="ngModel" required>
+    
+            <app-message [control]="nota" error="required"
+                text="Informe a nota"></app-message>
+    
+            </div>
+    
+            <div class="ui-g-6 ui-fluid">
+            <label>Data</label>
+                <p-calendar [showIcon]="true" name="data" dateFormat="dd/mm/yy"
+                [readonlyInput]="false" [(ngModel)]="avaliacao.data" #data="ngModel" required></p-calendar>
+    
+                <app-message [control]="data" error="required"
+                text="Informe a data"></app-message>
+            </div>
+    
+            <div class="ui-g-6 ui-fluid">
+            <label>Disciplinas</label>
+                <p-dropdown [options]="disciplina" [(ngModel)]="avaliacao.disciplina"  
+                 name="disciplinas" #disciplinas="ngModel" required></p-dropdown>
+
+                <app-message [control]="disciplinas" error="required"
+                text="Informe a Disciplina"></app-message>
+            </div>
+    
+            <div class="ui-g-9">
+                <button pButton type="submit" label="Salvar" (click)="adicionar()"></button>
+            </div>
+
+            <div class="ui-g-3">
+                <a href="">Voltar para Home</a>
+              </div>
+        </div>
+        
       </div>
-
-  <app-avaliacoes-listagem></app-avaliacoes-listagem>
-  <router-outlet></router-outlet> 
+  
+    </form>
+<router-outlet></router-outlet> 
 </div>

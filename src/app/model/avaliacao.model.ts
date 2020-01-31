@@ -1,8 +1,10 @@
+import { Aluno } from 'src/app/model/aluno.model';
+import { Disciplina } from './disciplina.model';
 export class Avaliacao {
     constructor(
       public data?: Date,
-      public disciplina?: Object,
-      public nome?: String,
-      public notaAvaliacao?: []
+      public disciplina?: Disciplina,
+      public aluno?: Aluno,
+      public nota?: number
     ) {}
 }

@@ -24,9 +24,8 @@ export class AvaliacoesListagemComponent implements OnInit {
 
     this.cols = [
       { field: 'id', header: 'ID' },
-      { field: 'nome', header: 'Nome' },
-      { field: 'nomeDisciplina', header: 'Disciplina' },
-      { field: 'data', header: 'Data' },
+      { field: 'aluno.nome', header: 'Nome' },
+      { field: 'nota', header: 'Nota' }
     ];
   }
 

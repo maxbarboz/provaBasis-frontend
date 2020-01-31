@@ -1,3 +1,5 @@
+import { AvaliacoesService } from './../../avaliacoes-page/avaliacoes.service';
+import { DisciplinasService } from './../../disciplinas-page/disciplinas.service';
 import { Aluno } from './../../model/aluno.model';
 import { AlunosService } from './../alunos.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,15 +12,39 @@ import { Component, OnInit } from '@angular/core';
 export class AlunosDetalharComponent implements OnInit {
 
 alunos: Aluno = {};
+cols: any;
+disciplina: any;
+avaliacao: any;
 
   constructor(
-    private alunosService: AlunosService
+    private alunosService: AlunosService,
+    private disciplinasService: DisciplinasService,
+    private avaliacaoService: AvaliacoesService
     ) { }
 
   ngOnInit() {
+    this.consultar();
+
     this.alunosService.detalhar().subscribe( res => {
       this.alunos = res.json();
-      console.log( this.alunos );
+    });
+    this.cols = [
+      { field: 'id', header: 'ID' },
+      { field: 'nome', header: 'Nome' },
+      { field: 'avaliacao.nota', header: 'Nota Avaliacão' },
+      { field: 'data', header: 'Data' }
+    ];
+  }
+
+  consultar(){
+    this.disciplinasService.consultar().subscribe( res => {
+      this.disciplina = res;
+      console.log( this.disciplina )
+    });
+
+    this.avaliacaoService.consultar().subscribe( res => {
+      this.avaliacao = res;
+      console.log( this.avaliacao )
     });
   }
 

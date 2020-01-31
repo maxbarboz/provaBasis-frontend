@@ -32,9 +32,13 @@
   
         <div class="ui-md-6 ui-fluid">
           <label> Data de Nascimento </label>
-          <p-calendar  name="dataNascimento" dateFormat="dd/mm/yy"
+
+          <input type="date" name="dateofbirth" id="dateofbirth" [(ngModel)]="professor.dataNascimento"
+          name="dataNascimento" #dataNascimento="ngModel" required>
+
+          <!-- <p-calendar  name="dataNascimento" dateFormat="dd/mm/yy"
             [readonlyInput]="false" [showIcon]="true"
-            ngModel #dataNascimento="ngModel" required [(ngModel)]="professor.dataNascimento"></p-calendar>
+            ngModel #dataNascimento="ngModel" required [(ngModel)]="professor.dataNascimento"></p-calendar> -->
   
           <app-message [control]="dataNascimento" error="required"
             text="Informe a Data de Nascimento"></app-message>
