@@ -1,3 +1,6 @@
+import { NotasPageComponent } from './avaliacoes-page/notas-page/notas-page.component';
+import { AvaliacoesEditarComponent } from './avaliacoes-page/avaliacoes-editar/avaliacoes-editar.component';
+import { AvaliacoesPageComponent } from './avaliacoes-page/avaliacoes-page.component';
 import { AlunosDetalharComponent } from './alunos-page/alunos-detalhar/alunos-detalhar.component';
 import { DisciplinasPageComponent } from './disciplinas-page/disciplinas-page.component';
 import { AlunosCadastrarComponent } from './alunos-page/alunos-cadastrar/alunos-cadastrar.component';
@@ -16,8 +19,6 @@ import { ProfessoresDetalharComponent } from './professores-page/professores-det
 const routes: Routes = [
   { path: 'alunos', component: AlunosPageComponent
   },
-  { path: 'home', component: HomePageComponent
-  },
   { path: 'alunos/cadastrar', component: AlunosCadastrarComponent
   },
   { path: 'alunos/detalhar', component: AlunosDetalharComponent
@@ -33,6 +34,14 @@ const routes: Routes = [
   { path: 'professores/cadastrar', component: ProfessoresCadastrarComponent
   },
   { path: 'professores/detalhar', component: ProfessoresDetalharComponent
+  },
+  { path: 'avaliacoes', component: AvaliacoesPageComponent
+  },
+  { path: 'avaliacoes/editar', component: AvaliacoesEditarComponent
+  },
+  { path: 'avaliacoes/notas', component: NotasPageComponent
+  },
+  { path: '', component: HomePageComponent
   }
 ];
 

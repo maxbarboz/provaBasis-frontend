@@ -1,3 +1,4 @@
+import { AvaliacoesModule } from './avaliacoes-page/avaliacoes.module';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { DisciplinasModule } from './disciplinas-page/disciplinas.module';
 import { ProfessoresModule } from './professores-page/professores.module';
 import { AlunosModule } from './alunos-page/alunos.module';
-import { CoreModule } from './core/core.module';
+import { CoreModule } from './core/core.module';;
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     HttpModule,
     DisciplinasModule,
-    ProfessoresModule
+    ProfessoresModule,
+    AvaliacoesModule
   ],
   providers: [
     ConfirmationService

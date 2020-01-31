@@ -1,0 +1,38 @@
+<div class="container">
+  
+    <div class="ui-g">
+          <div class="ui-g-12 ui-md-12">
+              <h1><i class="pi pi-copy"> Avaliações</i></h1>
+              <h5> Nova avaliação </h5>
+          </div>
+          <form #formAvaliacao="ngForm" autocomplete="off">
+             <div class="ui-g-12 ui-md-3 ui-fluid">
+               <label> Nome </label>
+               <input type="text" pInputText required [(ngModel)]="avaliacao.nome" name="nome"> 
+             </div>
+
+             <div class="ui-g-12 ui-md-3 ui-fluid">
+               <label> Informe a data </label>
+               <p-calendar dateFormat="dd.mm.yy" required 
+               [(ngModel)]="avaliacao.data" name="data"></p-calendar>
+             </div>
+               
+             <div class="ui-g-12 ui-md-3 ui-fluid">
+                <label> Selecione a disciplina</label>
+               <p-dropdown [options]="disciplinas" required placeholder="Opções"
+               [(ngModel)]="avaliacao.disciplina" name="disciplinas"></p-dropdown>
+             </div>
+               
+             <div class="ui-g-12 ui-md-3 ui-fluid">
+                <label> Salvar: </label>
+               <button pButton type="submit" label=">>" [disabled]="formAvaliacao.invalid" 
+               (click)="adicionar()"></button>
+             </div>
+
+         </form>
+
+      </div>
+
+  <app-avaliacoes-listagem></app-avaliacoes-listagem>
+  <router-outlet></router-outlet> 
+</div>
