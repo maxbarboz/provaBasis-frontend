@@ -20,7 +20,7 @@
 
         <div class="ui-g-12 ui-md-2 ui-fluid">
           <label> Carga Horária: </label>
-          <input pInputText type="text" name="cargaHoraria" #cargaHoraria="ngModel"
+          <input pInputText type="text" name="cargaHoraria" #cargaHoraria="ngModel" type="number"
             [(ngModel)]="disciplina.cargaHoraria" #cargaHoraria="ngModel" required minlength="1" maxlength="2">
         
             <app-message [control]="cargaHoraria" error="required"
