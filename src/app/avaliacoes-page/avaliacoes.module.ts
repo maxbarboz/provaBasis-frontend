@@ -11,13 +11,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
-import { AvaliacoesListagemComponent } from './avaliacoes-listagem/avaliacoes-listagem.component';
 import {CalendarModule} from 'primeng/calendar';
 
 @NgModule({
   declarations: [
-     AvaliacoesPageComponent,
-     AvaliacoesListagemComponent
+     AvaliacoesPageComponent
   ],
   imports: [
     CommonModule,
@@ -33,8 +31,7 @@ import {CalendarModule} from 'primeng/calendar';
     CalendarModule
   ],
   exports: [
-    AvaliacoesPageComponent,
-    AvaliacoesListagemComponent
+    AvaliacoesPageComponent
   ],
   providers: [
   ]

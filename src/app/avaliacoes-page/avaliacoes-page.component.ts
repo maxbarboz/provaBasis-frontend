@@ -16,6 +16,7 @@ export class AvaliacoesPageComponent implements OnInit {
 
   avaliacao: Avaliacao = new Avaliacao;
   disciplina: SelectItem[];
+  aluno: SelectItem[];
 
   constructor(
     private avaliacoesService: AvaliacoesService,
@@ -27,8 +28,12 @@ export class AvaliacoesPageComponent implements OnInit {
   ngOnInit() {
     this.disciplinasService.consultar().subscribe( (res: any[]) =>
     this.disciplina = res.map( disciplina => {
-      console.log(disciplina)
         return { label: disciplina.nome , value: {"id": disciplina.id} }
+    }));
+
+    this.alunosService.consultar().subscribe( (res: any[]) =>
+    this.aluno = res.map( aluno => {
+        return { label: aluno.nome , value: {"id": aluno.id} }
     }));
   }
 
@@ -36,7 +41,7 @@ export class AvaliacoesPageComponent implements OnInit {
     console.log( this.avaliacao )
     this.avaliacoesService.adicionar(this.avaliacao).subscribe(
       avaliacao => {
-        this.toasty.success('Edição feita com sucesso')
+        this.toasty.success('Nota lançada com sucesso')
       })
   }
 }
