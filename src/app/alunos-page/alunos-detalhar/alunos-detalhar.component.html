@@ -49,7 +49,10 @@
                             <ng-template pTemplate="body" let-avaliacoes>
                                 <tr>
                                     <td  *ngFor="let col of cols">
-                                            {{avaliacoes[col.field]}}
+                                        {{avaliacoes[col.field]}}
+                                        <p *ngIf="teste(col.field)">
+                                            {{avaliacoes.disciplina.nome}}
+                                        </p>
                                     </td >
                                     <td>
                                         <button type="button" class="cssEditar" routerLink="cadastrar" (click)="addIdPesquisa(alunos.id, true)"> <i class="pi pi-pencil"></i> </button>

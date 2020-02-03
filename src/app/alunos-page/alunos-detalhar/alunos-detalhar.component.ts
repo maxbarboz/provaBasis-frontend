@@ -31,22 +31,28 @@ mostrarComponent: boolean = false;
 
   ngOnInit() {
   this.detalhar();
-    this.cols = [
-      { field: 'id', header: 'ID' },
-      { field: 'nome', header: 'Nome' },
-      { field: 'nota', header: 'Nota Avaliacão' },
-      { field: 'data', header: 'Data' }
-    ];
   }
 
   detalhar(){
     this.alunosService.detalhar().subscribe( res => {
-      console.log( res.json())
       this.alunos = res.json();
-    });
+      this.cols = [
+        { field: 'nome', header: 'Nome' },
+        { field: 'nota', header: 'Nota Avaliacão' },
+        { field: 'data', header: 'Data' }
+      ];
+      console.log( this.alunos);
+    }); 
   }
   visualizar(){
    this.mostrarComponent = !this.mostrarComponent;
+  }
+
+  teste(event: any){
+    if(event === "nome"){
+      console.log(event);
+      return true;
+    }
   }
 
   excluir(id: number){
