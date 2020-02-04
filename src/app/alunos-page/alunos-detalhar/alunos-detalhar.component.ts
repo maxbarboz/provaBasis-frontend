@@ -41,7 +41,7 @@ mostrarComponent: boolean = false;
       this.cols = [
         { field: 'nome', header: 'Nome' },
         { field: 'nota', header: 'Nota Avaliacão' },
-        { field: 'data', header: 'Data' }
+        { field: 'data' , header: 'Data' }
       ];
       console.log( this.alunos);
     }); 
@@ -52,6 +52,13 @@ mostrarComponent: boolean = false;
 
   teste(event: any){
     if(event === "nome"){
+      console.log(event);
+      return true;
+    }
+  }
+
+  testeData(event: any){
+    if(event === "data"){
       console.log(event);
       return true;
     }

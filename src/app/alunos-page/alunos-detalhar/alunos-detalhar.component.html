@@ -49,9 +49,16 @@
                             <ng-template pTemplate="body" let-avaliacoes>
                                 <tr>
                                     <td  *ngFor="let col of cols">
-                                        {{avaliacoes[col.field]}}
+                                        <p *ngIf="testeData(col.field)">
+                                            {{ avaliacoes.data | date:'dd/MM/yyyy'  }}
+                                         </p>
+
+                                         <p *ngIf="!testeData(col.field)">
+                                            {{avaliacoes[col.field]}}
+                                         </p>
+                        
                                         <p *ngIf="teste(col.field)">
-                                            {{avaliacoes.disciplina.nome}}
+                                            {{ avaliacoes.disciplina.nome }}
                                         </p>
                                     </td >
                                     <td>
@@ -82,7 +89,7 @@
             <div>
                 <label> Nota </label>
                 <input pInputText type="number" name="nota" class="dados"
-                [(ngModel)]="avaliacaoEditar.nota" #nota="ngModel" minlength="1" maxlength="5" required>
+                [(ngModel)]="avaliacaoEditar.nota" #nota="ngModel" maxlength="5" required>
             
                     <app-message [control]="nota" error="required"
                         text="Informe a nota"></app-message>

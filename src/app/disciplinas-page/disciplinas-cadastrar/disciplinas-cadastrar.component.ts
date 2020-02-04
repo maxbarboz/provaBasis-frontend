@@ -27,7 +27,7 @@ export class DisciplinasCadastrarComponent implements OnInit {
     
     this.professoreService.consultar().subscribe( (res: any[]) =>
     this.professores = res.map( professor => {
-        return { label: professor.nome , value: {"id": professor.id} }
+        return { label: professor.nome , value: {"id": professor.id, "nome": professor.nome} }
     }));
 
     this.colsAtiva = [
@@ -38,6 +38,7 @@ export class DisciplinasCadastrarComponent implements OnInit {
     if(this.disciplinaService.carregarDisciplina == true) {
       this.disciplinaService.detalhar().subscribe( ( res =>{
         this.disciplina = res.json();
+        console.log( this.disciplina )
         this.editar = true;
       }));
     }
@@ -52,6 +53,7 @@ export class DisciplinasCadastrarComponent implements OnInit {
     if(this.editar == true){
       this.disciplinaService.editar(this.disciplina).subscribe( disciplina => {
         this.toasty.success('Edição feita com sucesso')
+        console.log( this.disciplina )
       },
       err =>  {
         this.errorHandler.handleError( err.json().message );
