@@ -55,7 +55,7 @@
                                         </p>
                                     </td >
                                     <td>
-                                        <button type="button" class="cssEditar" routerLink="cadastrar" (click)="addIdPesquisa(alunos.id, true)"> <i class="pi pi-pencil"></i> </button>
+                                        <button type="button" class="cssEditar" (click)="exibindoMenu = !exibindoMenu" (click)="salvarObjeto(avaliacoes.id)"> <i class="pi pi-pencil"></i> </button>
                                         
                                         <button type="button" class="cssExcluir" (click)="excluir(avaliacoes.id)"> 
                                             <i class="pi pi-trash"> </i>
@@ -72,3 +72,29 @@
         </div>
     </div>
 </div>
+
+
+<form #formEditar="ngForm" autocomplete="off">
+    <div class="container2">
+        <ul class="navbar-menu" [hidden]="!exibindoMenu">
+            <li class="navbar-usuario">Alterar Nota</li>
+
+            <div>
+                <label> Nota </label>
+                <input pInputText type="number" name="nota" class="dados"
+                [(ngModel)]="avaliacaoEditar.nota" #nota="ngModel" minlength="1" maxlength="5" required>
+            
+                    <app-message [control]="nota" error="required"
+                        text="Informe a nota"></app-message>
+                    <app-message [control]="nota" error="minlength"
+                        text="Informe a nota"></app-message>
+                    <app-message [control]="nota" error="maxlength"
+                        text="Informe uma nota menor ou igual a 99.99"></app-message>
+            </div>
+
+            <p-button icon="pi pi-check" label="Salvar Alteração" [disabled]="formEditar.invalid" (click)="editar()"></p-button>
+            <a href="" (click)="exibindoMenu = !exibindoMenu"> Cancelar </a>
+        </ul>
+    </div>
+</form>
+

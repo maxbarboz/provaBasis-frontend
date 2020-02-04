@@ -12,11 +12,15 @@
 
             <div class="ui-g-12 ui-fluid">
             <label>Valor da Nota</label>
-            <input pInputText type="text" name="nota"
-                [(ngModel)]="avaliacao.nota" #nota="ngModel" required>
+            <input pInputText type="number" name="nota"
+                [(ngModel)]="avaliacao.nota" #nota="ngModel" minlength="1" maxlength="5" required>
     
             <app-message [control]="nota" error="required"
                 text="Informe a nota"></app-message>
+            <app-message [control]="nota" error="minlength"
+                text="Informe a nota"></app-message>
+            <app-message [control]="nota" error="maxlength"
+                text="Informe uma nota menor ou igual a 99.99"></app-message>
     
             </div>
     
@@ -32,7 +36,7 @@
             <div class="ui-g-12 ui-fluid">
             <label>Disciplinas</label>
                 <p-dropdown [options]="disciplina" [(ngModel)]="avaliacao.disciplina" placeholder="Selecione a Disciplina" 
-                 name="disciplinas" #disciplinas="ngModel" required></p-dropdown>
+                 name="disciplinas" #disciplinas="ngModel" required (click)="carregarAlunos(avaliacao.disciplina.id)"></p-dropdown>
 
                 <app-message [control]="disciplinas" error="required"
                 text="Informe a Disciplina"></app-message>

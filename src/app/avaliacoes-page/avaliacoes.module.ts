@@ -34,6 +34,8 @@ import {CalendarModule} from 'primeng/calendar';
     AvaliacoesPageComponent
   ],
   providers: [
+  ],
+  entryComponents: [
   ]
 })
 

@@ -6,6 +6,7 @@ import { Aluno } from './../../model/aluno.model';
 import { AlunosService } from './../alunos.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastyService } from 'ng2-toasty';
+import { Avaliacao } from 'src/app/model/avaliacao.model';
 
 @Component({
   selector: 'app-alunos-detalhar',
@@ -17,6 +18,7 @@ export class AlunosDetalharComponent implements OnInit {
 alunos: Aluno = {};
 cols: any;
 disciplina: any;
+avaliacaoEditar: Avaliacao = new Avaliacao;
 
 mostrarComponent: boolean = false;
 
@@ -70,4 +72,21 @@ mostrarComponent: boolean = false;
       }
     });
   }
+
+  salvarObjeto(id: number){
+    this.avaliacaoService.detalhar(id).subscribe( res => {
+      this.avaliacaoEditar = res;
+    }); 
+  }
+
+  editar(){
+    this.avaliacaoService.editar(this.avaliacaoEditar).subscribe( res => {
+      this.toasty.success('Nota editada com sucesso')
+      this.detalhar();
+    },
+    err =>  {
+      this.errorHandler.handleError( err.json().message );
+    });
+  }
+
 }

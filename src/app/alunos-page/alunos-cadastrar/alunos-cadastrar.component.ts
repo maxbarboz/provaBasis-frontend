@@ -9,7 +9,7 @@ import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 @Component({
   selector: 'app-alunos-cadastrar',
   templateUrl: './alunos-cadastrar.component.html',
-  styleUrls: ['./alunos-cadastrar.component.css']
+  styleUrls: ['./alunos-cadastrar.component.scss']
 })
 export class AlunosCadastrarComponent implements OnInit{
 
@@ -18,6 +18,7 @@ disciplinas: SelectItem[];
 alunoId: number;
 editar: boolean = false;
 date6: Date;
+
 constructor(
   private alunosService: AlunosService,
   private disciplinasService: DisciplinasService,
@@ -35,6 +36,7 @@ ngOnInit() {
   if(this.alunosService.carregarAluno == true) {
     this.alunosService.detalhar().subscribe( ( res =>{
       this.aluno = res.json();
+      console.log( this.aluno )
       this.editar = true;
     }));
   }
