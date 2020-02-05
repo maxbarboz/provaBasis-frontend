@@ -16,9 +16,12 @@ export class ProfessoresDetalharComponent implements OnInit {
     ) {}
 
   ngOnInit() {
+    this.detalharProfessor();
+  }
+
+  detalharProfessor(){
     this.professoresService.detalhar().subscribe( res => {
       this.professor = res.json();
     });
   }
-
 }

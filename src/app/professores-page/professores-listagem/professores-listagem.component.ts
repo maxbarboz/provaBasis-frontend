@@ -12,7 +12,13 @@ import { ProfessoresService } from '../professores.service';
 export class ProfessoresListagemComponent implements OnInit {
 
   professor: any = [];
-  cols: any[] =  [];
+  cols: any[] = [
+    { field: 'id', header: 'ID' },
+    { field: 'nome', header: 'Nome' },
+    { field: 'matricula', header: 'Matrícula' },
+    { field: 'area', header: 'Área' },
+    { field: 'idade', header: 'Idade' }
+  ];
 
   constructor(
     private professorService: ProfessoresService,
@@ -23,14 +29,6 @@ export class ProfessoresListagemComponent implements OnInit {
 
   ngOnInit()  {
     this.consultar();
-
-    this.cols = [
-      { field: 'id', header: 'ID' },
-      { field: 'nome', header: 'Nome' },
-      { field: 'matricula', header: 'Matrícula' },
-      { field: 'area', header: 'Área' },
-      { field: 'idade', header: 'Idade' }
-    ];
   }
 
   consultar(){

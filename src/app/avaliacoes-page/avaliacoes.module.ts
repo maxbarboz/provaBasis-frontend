@@ -1,5 +1,3 @@
-import { AvaliacoesPageComponent } from './avaliacoes-page.component';
-import { SharedModule } from './../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,6 +10,9 @@ import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 import {CalendarModule} from 'primeng/calendar';
+
+import { AvaliacoesPageComponent } from './avaliacoes-page.component';
+import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
   declarations: [

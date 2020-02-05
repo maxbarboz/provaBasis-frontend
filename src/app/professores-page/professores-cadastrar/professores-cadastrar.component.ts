@@ -21,13 +21,16 @@ export class ProfessoresCadastrarComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-
     if(this.professorService.carregarProfessor == true) {
-      this.professorService.detalhar().subscribe( ( res =>{
-        this.professor = res.json();
-        this.editar = true;
-      }));
+      this.carregarProfessor();
     }
+  }
+
+  carregarProfessor(){
+    this.professorService.detalhar().subscribe( ( res =>{
+      this.professor = res.json();
+      this.editar = true;
+    }));
   }
 
   adicionar(){

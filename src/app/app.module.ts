@@ -1,4 +1,3 @@
-import { AvaliacoesModule } from './avaliacoes-page/avaliacoes.module';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,6 +15,7 @@ import { DisciplinasModule } from './disciplinas-page/disciplinas.module';
 import { ProfessoresModule } from './professores-page/professores.module';
 import { AlunosModule } from './alunos-page/alunos.module';
 import { CoreModule } from './core/core.module';;
+import { AvaliacoesModule } from './avaliacoes-page/avaliacoes.module';
 
 @NgModule({
   declarations: [

@@ -12,13 +12,16 @@ export class DisciplinasDetalharComponent implements OnInit {
   disciplina: Disciplina = {};
 
   constructor(
-    private disciplinasService: DisciplinasService,
-    ) {}
+    private disciplinasService: DisciplinasService
+  ) {}
 
   ngOnInit() {
+    this.detalharDisciplina();
+  }
+  
+  detalharDisciplina(){
     this.disciplinasService.detalhar().subscribe( res => {
       this.disciplina = res.json();
     });
   }
-
 }

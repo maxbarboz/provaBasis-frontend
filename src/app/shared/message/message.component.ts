@@ -10,6 +10,7 @@ import { Component, Input } from '@angular/core';
   `,
   styles: ['./message.component.css']
 })
+
 export class MessageComponent {
 
   @Input() error: string;

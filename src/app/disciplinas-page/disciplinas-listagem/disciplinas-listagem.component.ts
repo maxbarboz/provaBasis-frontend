@@ -12,7 +12,12 @@ import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 export class DisciplinasListagemComponent implements OnInit {
 
   disciplina: any = [];
-  cols: any[] =  [];
+  cols: any[] = [
+    { field: 'id', header: 'ID' },
+    { field: 'nome', header: 'Nome' },
+    { field: 'cargaHoraria', header: 'Carga Horária' },
+    { field: 'descricao', header: 'Descrição' }
+  ];
 
   constructor(
     private disciplinasService: DisciplinasService,
@@ -23,13 +28,6 @@ export class DisciplinasListagemComponent implements OnInit {
 
   ngOnInit()  {
     this.consultar();
-
-    this.cols = [
-      { field: 'id', header: 'ID' },
-      { field: 'nome', header: 'Nome' },
-      { field: 'cargaHoraria', header: 'Carga Horária' },
-      { field: 'descricao', header: 'Descrição' }
-    ];
   }
 
   consultar(){
@@ -52,11 +50,10 @@ export class DisciplinasListagemComponent implements OnInit {
         );
       }
     });
-}
-
-
+  }
 
   addIdPesquisa(id: number, carregarDisciplina: boolean){
     this.disciplinasService.addIdPesquisa(id, carregarDisciplina);
   }
+  
 }

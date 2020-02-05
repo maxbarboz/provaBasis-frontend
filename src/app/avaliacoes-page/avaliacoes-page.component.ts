@@ -6,7 +6,6 @@ import { AvaliacoesService } from './avaliacoes.service';
 import { DisciplinasService } from './../disciplinas-page/disciplinas.service';
 import { Component, OnInit } from '@angular/core';
 import { Avaliacao } from '../model/avaliacao.model';
-import { identifierModuleUrl, ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-avaliacoes-page',
@@ -28,11 +27,19 @@ export class AvaliacoesPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.carregarAluno();
+
+    this.carregarDisciplina(); 
+  }
+
+  carregarAluno(){
     this.alunosService.consultar().subscribe( (res: any[]) =>
     this.aluno = res.map( aluno => {
-        return { label: aluno.nome , value: {"id": aluno.id} }
+        return { label: aluno.nome , value: {"id": aluno.id } }
     }));
+  }
 
+  carregarDisciplina(){
     this.disciplinasService.consultar().subscribe( (res: any[]) =>
     this.disciplina = res.map( disciplina => {
         return { label: disciplina.nome , value: {"id": disciplina.id} }
@@ -48,6 +55,6 @@ export class AvaliacoesPageComponent implements OnInit {
       err =>  {
         this.errorHandler.handleError( err.json().message );
       })
-
   }
+  
 }

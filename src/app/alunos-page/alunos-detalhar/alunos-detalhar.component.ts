@@ -1,7 +1,6 @@
 import { ErrorHandlerService } from './../../core/error-handler.service';
 import { ConfirmationService } from 'primeng/api';
 import { AvaliacoesService } from './../../avaliacoes-page/avaliacoes.service';
-import { DisciplinasService } from './../../disciplinas-page/disciplinas.service';
 import { Aluno } from './../../model/aluno.model';
 import { AlunosService } from './../alunos.service';
 import { Component, OnInit } from '@angular/core';
@@ -24,7 +23,6 @@ mostrarComponent: boolean = false;
 
   constructor(
     private alunosService: AlunosService,
-    private disciplinasService: DisciplinasService,
     private avaliacaoService: AvaliacoesService,
     private confirmation: ConfirmationService,
     private toasty: ToastyService,
@@ -32,7 +30,7 @@ mostrarComponent: boolean = false;
     ) { }
 
   ngOnInit() {
-  this.detalhar();
+    this.detalhar();
   }
 
   detalhar(){
@@ -43,23 +41,21 @@ mostrarComponent: boolean = false;
         { field: 'nota', header: 'Nota Avaliacão' },
         { field: 'data' , header: 'Data' }
       ];
-      console.log( this.alunos);
     }); 
   }
+
   visualizar(){
    this.mostrarComponent = !this.mostrarComponent;
   }
 
   teste(event: any){
     if(event === "nome"){
-      console.log(event);
       return true;
     }
   }
 
   testeData(event: any){
     if(event === "data"){
-      console.log(event);
       return true;
     }
   }

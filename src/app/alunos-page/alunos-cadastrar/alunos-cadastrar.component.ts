@@ -13,22 +13,29 @@ import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 })
 export class AlunosCadastrarComponent implements OnInit{
 
-aluno: Aluno = new Aluno();
-disciplinas: SelectItem[];
-alunoId: number;
-editar: boolean = false;
-date6: Date;
+  aluno: Aluno = new Aluno();
+  disciplinas: SelectItem[];
+  alunoId: number;
+  editar: boolean = false;
+  date6: Date;
 
-constructor(
-  private alunosService: AlunosService,
-  private disciplinasService: DisciplinasService,
-  private toasty: ToastyService,
-  private errorHandler: ErrorHandlerService
-  ) {
-}
+  constructor(
+    private alunosService: AlunosService,
+    private disciplinasService: DisciplinasService,
+    private toasty: ToastyService,
+    private errorHandler: ErrorHandlerService
+    ) {
+  }
 
-ngOnInit() {
-  if(this.alunosService.carregarAluno == true) {
+  ngOnInit() {
+    if(this.alunosService.carregarAluno == true) {
+      this.carregarAluno();
+    }
+    
+    this.carregarDisciplina();
+  }
+
+  carregarAluno(){
     this.alunosService.detalhar().subscribe( ( res =>{
       this.aluno = res.json();
       console.log( this.aluno )
@@ -36,12 +43,13 @@ ngOnInit() {
     }));
   }
 
-  this.disciplinasService.consultar().subscribe( (res: any[]) =>
+  carregarDisciplina(){
+    this.disciplinasService.consultar().subscribe( (res: any[]) =>
     this.disciplinas = res.map( disciplina => {
-        return { label: disciplina.nome , value: {"id" : disciplina.id } }
+      return { label: disciplina.nome , value: {"id" : disciplina.id }  }
     }));
-}
-
+  }
+    
   adicionar() {
     if(this.editar == true) {
       this.alunosService.editar(this.aluno).subscribe(
@@ -70,9 +78,10 @@ ngOnInit() {
           console.log(err.json().errors[0].defaultMessage )
           this.errorHandler.handleError( err.json().errors[0].defaultMessage );
         }
-      }
+        }
       );
     }
   }
+    
 }
 

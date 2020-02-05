@@ -12,7 +12,12 @@ import { ConfirmationService } from 'primeng/api';
 export class AlunosListagemComponent implements OnInit {
 
   alunos: any = [];
-  cols: any[] =  [];
+  cols: any[] = [
+    { field: 'id', header: 'ID' },
+    { field: 'nome', header: 'Nome' },
+    { field: 'matricula', header: 'Matrícula' },
+    { field: 'idade', header: 'Idade' }
+  ];
 
   constructor(
     private alunosService: AlunosService, 
@@ -23,13 +28,6 @@ export class AlunosListagemComponent implements OnInit {
 
   ngOnInit()  {
     this.consultar();
-
-    this.cols = [
-      { field: 'id', header: 'ID' },
-      { field: 'nome', header: 'Nome' },
-      { field: 'matricula', header: 'Matrícula' },
-      { field: 'idade', header: 'Idade' }
-    ];
   }
 
   consultar(){
@@ -57,4 +55,5 @@ export class AlunosListagemComponent implements OnInit {
   addIdPesquisa(id: number, carregarAluno: boolean){
     this.alunosService.addIdPesquisa(id, carregarAluno);
   }
+  
 }

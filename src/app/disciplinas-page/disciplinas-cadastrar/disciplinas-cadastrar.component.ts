@@ -52,15 +52,10 @@ export class DisciplinasCadastrarComponent implements OnInit {
     }));
   }
 
-  teste(){
-    console.log(this.disciplina);
-  }
-
   adicionar() {
     if(this.editar == true){
       this.disciplinaService.editar(this.disciplina).subscribe( disciplina => {
         this.toasty.success('Edição feita com sucesso')
-        console.log( this.disciplina )
       },
       err =>  {
         this.errorHandler.handleError( err.json().message );

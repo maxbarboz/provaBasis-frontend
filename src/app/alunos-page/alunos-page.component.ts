@@ -15,4 +15,5 @@ export class AlunosPageComponent implements OnInit{
   ngOnInit()  {
     this.alunosService.consultar();
   }
+  
 }
