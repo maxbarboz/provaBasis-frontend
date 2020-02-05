@@ -57,11 +57,11 @@ export class AlunosCadastrarComponent implements OnInit{
       },
       err =>  {
         if( !err.json().errors ){
-          console.log( err.json().message )
           this.errorHandler.handleError( err.json().message );
         }else{
-          console.log(err.json().errors[0].defaultMessage )
-          this.errorHandler.handleError( err.json().errors[0].defaultMessage );
+          err.json().errors.forEach( errors => {
+            this.errorHandler.handleError( errors.defaultMessage );
+          });
         }
       }
       );
@@ -72,11 +72,11 @@ export class AlunosCadastrarComponent implements OnInit{
       },
       err =>  {
         if( !err.json().errors ){
-          console.log( err.json().message )
           this.errorHandler.handleError( err.json().message );
         }else{
-          console.log(err.json().errors[0].defaultMessage )
-          this.errorHandler.handleError( err.json().errors[0].defaultMessage );
+          err.json().errors.forEach( errors => {
+            this.errorHandler.handleError( errors.defaultMessage );
+          });
         }
         }
       );
