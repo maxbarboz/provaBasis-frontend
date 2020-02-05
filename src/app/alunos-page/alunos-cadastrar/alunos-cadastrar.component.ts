@@ -28,11 +28,6 @@ constructor(
 }
 
 ngOnInit() {
-  this.disciplinasService.consultar().subscribe( (res: any[]) =>
-    this.disciplinas = res.map( disciplina => {
-        return { label: disciplina.nome , value: {"id": disciplina.id} }
-    }));
-
   if(this.alunosService.carregarAluno == true) {
     this.alunosService.detalhar().subscribe( ( res =>{
       this.aluno = res.json();
@@ -40,6 +35,11 @@ ngOnInit() {
       this.editar = true;
     }));
   }
+
+  this.disciplinasService.consultar().subscribe( (res: any[]) =>
+    this.disciplinas = res.map( disciplina => {
+        return { label: disciplina.nome , value: {"id" : disciplina.id } }
+    }));
 }
 
   adicionar() {

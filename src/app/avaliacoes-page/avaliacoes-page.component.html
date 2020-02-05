@@ -13,14 +13,10 @@
             <div class="ui-g-12 ui-fluid">
             <label>Valor da Nota</label>
             <input pInputText type="number" name="nota"
-                [(ngModel)]="avaliacao.nota" #nota="ngModel" minlength="1" maxlength="5" required>
+                [(ngModel)]="avaliacao.nota" #nota="ngModel" required>
     
             <app-message [control]="nota" error="required"
                 text="Informe a nota"></app-message>
-            <app-message [control]="nota" error="minlength"
-                text="Informe a nota"></app-message>
-            <app-message [control]="nota" error="maxlength"
-                text="Informe uma nota menor ou igual a 99.99"></app-message>
     
             </div>
     

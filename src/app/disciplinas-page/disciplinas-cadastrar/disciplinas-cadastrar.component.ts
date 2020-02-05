@@ -14,40 +14,47 @@ import { ToastyService } from 'ng2-toasty';
 export class DisciplinasCadastrarComponent implements OnInit {
 
   disciplina: Disciplina = new Disciplina();
-  professores: SelectItem[];
+  professores: SelectItem[] = [];
   editar: boolean = false;
-  colsAtiva: any = [];
-
+  colsAtiva: any = [
+    {label: '1 - Ativa', value: 1 },
+    {label: '2 - Não Ativa', value: 0 }
+  ];
+ 
   constructor(
     private disciplinaService: DisciplinasService,
     private professoreService: ProfessoresService,
     private toasty: ToastyService,
     private errorHandler: ErrorHandlerService
-  ) { 
-    
-    this.professoreService.consultar().subscribe( (res: any[]) =>
-    this.professores = res.map( professor => {
-        return { label: professor.nome , value: {"id": professor.id, "nome": professor.nome} }
-    }));
-
-    this.colsAtiva = [
-      {label: '1 - Ativa', value: 1 },
-      {label: '2 - Não Ativa', value: 0 }
-    ];
-
-    if(this.disciplinaService.carregarDisciplina == true) {
-      this.disciplinaService.detalhar().subscribe( ( res =>{
-        this.disciplina = res.json();
-        console.log( this.disciplina )
-        this.editar = true;
-      }));
-    }
-
-  }
+  ) { }
 
   ngOnInit() {
+
+    if(this.disciplinaService.carregarDisciplina == true) {
+        this.carregarDisciplina();
+    }
+
+    this.carregarProfessores();
   }
 
+  carregarDisciplina(){
+    this.disciplinaService.detalhar().subscribe( ( res =>{
+      this.disciplina = res.json();
+      this.carregarProfessores();
+      this.editar = true;
+    }));
+  }
+
+  carregarProfessores() {
+    this.professoreService.consultar().subscribe( (res: any[]) =>
+    this.professores = res.map( professor => {
+        return { label: professor.nome , value: professor.id }
+    }));
+  }
+
+  teste(){
+    console.log(this.disciplina);
+  }
 
   adicionar() {
     if(this.editar == true){

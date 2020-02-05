@@ -1,3 +1,4 @@
+import { Professor } from 'src/app/model/professor.model';
 export class Disciplina {
     constructor(
       public id?: number,
@@ -5,6 +6,6 @@ export class Disciplina {
       public cargaHoraria?: number,
       public ativa?: boolean,
       public descricao?: string,
-      public professor?: object
+      public professor?: Professor
     ) {}
 }

@@ -6,6 +6,7 @@ import { AvaliacoesService } from './avaliacoes.service';
 import { DisciplinasService } from './../disciplinas-page/disciplinas.service';
 import { Component, OnInit } from '@angular/core';
 import { Avaliacao } from '../model/avaliacao.model';
+import { identifierModuleUrl, ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-avaliacoes-page',
@@ -22,19 +23,20 @@ export class AvaliacoesPageComponent implements OnInit {
     private avaliacoesService: AvaliacoesService,
     private alunosService: AlunosService,
     private disciplinasService: DisciplinasService,
-    private toasty: ToastyService
+    private toasty: ToastyService,
+    private errorHandler: ErrorHandlerService
   ) { }
 
   ngOnInit() {
-    this.disciplinasService.consultar().subscribe( (res: any[]) =>
-    this.disciplina = res.map( disciplina => {
-        return { label: disciplina.nome , value: {"id": disciplina.id} }
-    }));
-
     this.alunosService.consultar().subscribe( (res: any[]) =>
     this.aluno = res.map( aluno => {
         return { label: aluno.nome , value: {"id": aluno.id} }
     }));
+
+    this.disciplinasService.consultar().subscribe( (res: any[]) =>
+    this.disciplina = res.map( disciplina => {
+        return { label: disciplina.nome , value: {"id": disciplina.id} }
+    }));    
   }
 
   adicionar(){
@@ -42,6 +44,10 @@ export class AvaliacoesPageComponent implements OnInit {
     this.avaliacoesService.adicionar(this.avaliacao).subscribe(
       avaliacao => {
         this.toasty.success('Nota lançada com sucesso')
+      },
+      err =>  {
+        this.errorHandler.handleError( err.json().message );
       })
+
   }
 }

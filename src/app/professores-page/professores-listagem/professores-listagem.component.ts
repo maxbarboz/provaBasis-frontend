@@ -35,7 +35,6 @@ export class ProfessoresListagemComponent implements OnInit {
 
   consultar(){
     this.professorService.consultar().subscribe( res => {
-      console.log( res )
       this.professor = res;
     });
   }
@@ -49,7 +48,6 @@ export class ProfessoresListagemComponent implements OnInit {
           this.consultar();
         },
         err =>  {
-          console.log( err.json().message )
           this.errorHandler.handleError( err.json().message );
         }
         );
