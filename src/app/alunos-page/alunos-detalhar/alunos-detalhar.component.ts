@@ -15,9 +15,13 @@ import { Avaliacao } from 'src/app/model/avaliacao.model';
 export class AlunosDetalharComponent implements OnInit {
 
 alunos: Aluno = {};
-cols: any;
 disciplina: any;
 avaliacaoEditar: Avaliacao = new Avaliacao;
+cols = [
+  { field: 'nome', header: 'Nome' },
+  { field: 'nota', header: 'Nota Avaliacão' },
+  { field: 'data' , header: 'Data' }
+];
 
 mostrarComponent: boolean = false;
 
@@ -36,11 +40,6 @@ mostrarComponent: boolean = false;
   detalhar(){
     this.alunosService.detalhar().subscribe( res => {
       this.alunos = res.json();
-      this.cols = [
-        { field: 'nome', header: 'Nome' },
-        { field: 'nota', header: 'Nota Avaliacão' },
-        { field: 'data' , header: 'Data' }
-      ];
     }); 
   }
 

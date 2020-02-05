@@ -32,7 +32,6 @@ export class AlunosService {
   }
 
   editar(aluno: any): Observable<{}> {
-    console.log( aluno )
     return this.http.put('http://localhost:8080/api/alunos', aluno)
   }
 

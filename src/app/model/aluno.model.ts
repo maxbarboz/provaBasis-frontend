@@ -3,7 +3,7 @@ export class Aluno {
       public nome?: string,
       public cpf?: number,
       public dataNascimento?: Date,
-      public disciplina?: [],
+      public disciplinas?: any[],
       public matricula?: string
     ) {}
 }

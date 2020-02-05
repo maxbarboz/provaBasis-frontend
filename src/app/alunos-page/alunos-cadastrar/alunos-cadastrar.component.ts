@@ -17,7 +17,8 @@ export class AlunosCadastrarComponent implements OnInit{
   disciplinas: SelectItem[];
   alunoId: number;
   editar: boolean = false;
-  date6: Date;
+  listaDisciplinas: number[] = [];
+  todasDisciplinas: any[] = [];
 
   constructor(
     private alunosService: AlunosService,
@@ -38,48 +39,56 @@ export class AlunosCadastrarComponent implements OnInit{
   carregarAluno(){
     this.alunosService.detalhar().subscribe( ( res =>{
       this.aluno = res.json();
-      console.log( this.aluno )
+      this.listaDisciplinas = this.getDisciplinasSelecionados(this.aluno.disciplinas);
       this.editar = true;
     }));
   }
 
+  getDisciplinasSelecionados(disciplinas: any[]){
+    return disciplinas.map(disciplina => disciplina.id);
+  }
+
   carregarDisciplina(){
-    this.disciplinasService.consultar().subscribe( (res: any[]) =>
-    this.disciplinas = res.map( disciplina => {
-      return { label: disciplina.nome , value: {"id" : disciplina.id }  }
-    }));
+    this.disciplinasService.consultar()
+      .subscribe( (res: any[]) => {
+        this.todasDisciplinas = res;
+        this.disciplinas = res.map( disciplina => {
+          return { label: disciplina.nome , value:  disciplina.id   }
+        });
+      });
+  }
+
+  vincularDisciplinas(){
+    this.aluno.disciplinas = this.todasDisciplinas.filter(disciplina => {
+      return this.listaDisciplinas.some(disc => disc == disciplina.id);
+    });
   }
     
   adicionar() {
+    this.vincularDisciplinas();
     if(this.editar == true) {
       this.alunosService.editar(this.aluno).subscribe(
         aluno => {this.toasty.success('Edição feita com sucesso')
       },
-      err =>  {
-        if( !err.json().errors ){
-          this.errorHandler.handleError( err.json().message );
-        }else{
-          err.json().errors.forEach( errors => {
-            this.errorHandler.handleError( errors.defaultMessage );
-          });
-        }
-      }
+      err =>  { this.verificacaoErrors( err ) }
       );
     }else{
       this.alunosService.adicionar(this.aluno).subscribe(
         aluno => {
           this.toasty.success('Aluno cadastrado com sucesso')
       },
-      err =>  {
-        if( !err.json().errors ){
-          this.errorHandler.handleError( err.json().message );
-        }else{
-          err.json().errors.forEach( errors => {
-            this.errorHandler.handleError( errors.defaultMessage );
-          });
-        }
-        }
+      err =>  { this.verificacaoErrors( err ) }
       );
+    }
+  }
+
+  verificacaoErrors(err){
+    if( !err.json().errors ){
+      this.errorHandler.handleError( err.json().message );
+    }else{
+      err.json().errors.forEach( errors => {
+        this.errorHandler.handleError( errors.defaultMessage );
+      });
     }
   }
     

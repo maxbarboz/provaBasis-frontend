@@ -24,7 +24,7 @@ export class AlunosListagemComponent implements OnInit {
     private toasty: ToastyService,
     private confirmation: ConfirmationService,
     private errorHandler: ErrorHandlerService
-    ) {}
+  ) {}
 
   ngOnInit()  {
     this.consultar();
@@ -55,5 +55,5 @@ export class AlunosListagemComponent implements OnInit {
   addIdPesquisa(id: number, carregarAluno: boolean){
     this.alunosService.addIdPesquisa(id, carregarAluno);
   }
-  
+
 }

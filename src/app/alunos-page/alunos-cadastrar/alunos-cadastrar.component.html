@@ -53,8 +53,8 @@
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label> Disciplinas </label>
-        {{ aluno.disciplinas | json }}
-        <p-multiSelect [options]="disciplinas" [(ngModel)]="aluno.disciplinas" name="disciplinas"
+       
+        <p-multiSelect [options]="disciplinas" [(ngModel)]="listaDisciplinas" name="disciplinas"
         [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
       </div>
 

@@ -28,7 +28,6 @@ export class AvaliacoesPageComponent implements OnInit {
 
   ngOnInit() {
     this.carregarAluno();
-
     this.carregarDisciplina(); 
   }
 
@@ -56,5 +55,5 @@ export class AvaliacoesPageComponent implements OnInit {
         this.errorHandler.handleError( err.json().message );
       })
   }
-  
+
 }
