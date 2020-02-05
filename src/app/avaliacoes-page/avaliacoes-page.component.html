@@ -32,18 +32,24 @@
             <div class="ui-g-12 ui-fluid">
             <label>Disciplinas</label>
                 <p-dropdown [options]="disciplina" [(ngModel)]="avaliacao.disciplina" placeholder="Selecione a Disciplina" 
-                 name="disciplinas" #disciplinas="ngModel" required (click)="carregarAlunos(avaliacao.disciplina.id)"></p-dropdown>
+                 name="disciplinas" #disciplinas="ngModel" required></p-dropdown>
 
                 <app-message [control]="disciplinas" error="required"
                 text="Informe a Disciplina"></app-message>
             </div>
 
             <div class="ui-g-12 ui-fluid">
+                <p-button icon="pi pi-replay" label="Carregar Alunos" (click)="carregarAluno(avaliacao.disciplina.id)" 
+                [hidden]="exibindoAlunos"></p-button>
+                <p-button icon="pi pi-times" label="Cancelar Pesquisa" (click)="alteraExibindoAlunos()" [hidden]="!exibindoAlunos" ></p-button>
+            </div>
+
+            <div class="ui-g-12 ui-fluid" [hidden]="!exibindoAlunos">
                 <label>Alunos</label>
-                    <p-dropdown [options]="aluno" [(ngModel)]="avaliacao.aluno" placeholder="Selecione o Aluno"
-                     name="alunos" #alunos="ngModel" required></p-dropdown>
+                    <p-dropdown [options]="alunos" [(ngModel)]="avaliacao.aluno" placeholder="Selecione o Aluno"
+                     name="aluno" #aluno="ngModel" required></p-dropdown>
     
-                    <app-message [control]="alunos" error="required"
+                    <app-message [control]="aluno" error="required"
                     text="Informe a Disciplina"></app-message>
                 </div>
     

@@ -42,12 +42,17 @@ export class DisciplinasService {
       this.router.navigate(['/disciplinas'])
       return this.http.get('http://localhost:8080/api/disciplinas')
     }
-
+    
     return this.http.get(`http://localhost:8080/api/disciplinas/detalhes/${this.idDisciplina}`);
+  }
+
+  detalharParaAvaliacao(id: number) { 
+    return this.http.get(`http://localhost:8080/api/disciplinas/detalhes/${id}`);
   }
 
   addIdPesquisa(id: number, carregarDisciplina: boolean){
     this.idDisciplina = id;
     this.carregarDisciplina = carregarDisciplina;
   }
+
 }

@@ -16,33 +16,39 @@ export class AvaliacoesPageComponent implements OnInit {
 
   avaliacao: Avaliacao = new Avaliacao;
   disciplina: SelectItem[];
-  aluno: SelectItem[];
-
+  alunos: SelectItem[];
+  exibindoAlunos: boolean;
+  
   constructor(
     private avaliacoesService: AvaliacoesService,
-    private alunosService: AlunosService,
     private disciplinasService: DisciplinasService,
     private toasty: ToastyService,
     private errorHandler: ErrorHandlerService
   ) { }
 
   ngOnInit() {
-    this.carregarAluno();
-    this.carregarDisciplina(); 
-  }
-
-  carregarAluno(){
-    this.alunosService.consultar().subscribe( (res: any[]) =>
-    this.aluno = res.map( aluno => {
-        return { label: aluno.nome , value: {"id": aluno.id } }
-    }));
+    this.carregarDisciplina();
   }
 
   carregarDisciplina(){
     this.disciplinasService.consultar().subscribe( (res: any[]) =>
     this.disciplina = res.map( disciplina => {
-        return { label: disciplina.nome , value: {"id": disciplina.id} }
-    }));    
+      return { label: disciplina.nome , value: {"id": disciplina.id} }
+    }));   
+  }
+
+  carregarAluno(idDisciplina){
+    this.disciplinasService.detalharParaAvaliacao(idDisciplina).subscribe( res => {
+      this.alunos = res.json().alunos.map( aluno => {
+        return { label: aluno.nome , value: {"id": aluno.id} }
+      })
+      console.log( this.alunos )
+      this.alteraExibindoAlunos();
+    });
+  }
+
+  alteraExibindoAlunos(){
+    this.exibindoAlunos = !this.exibindoAlunos;
   }
 
   adicionar(){
