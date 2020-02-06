@@ -1,3 +1,4 @@
+import { AvaliacoesV2PageComponent } from './avaliacoes-page/avaliacoes-v2-page/avaliacoes-v2-page.component';
 import { AvaliacoesPageComponent } from './avaliacoes-page/avaliacoes-page.component';
 import { AlunosDetalharComponent } from './alunos-page/alunos-detalhar/alunos-detalhar.component';
 import { DisciplinasPageComponent } from './disciplinas-page/disciplinas-page.component';
@@ -33,6 +34,8 @@ const routes: Routes = [
   { path: 'professores/detalhar', component: ProfessoresDetalharComponent
   },
   { path: 'avaliacoes', component: AvaliacoesPageComponent
+  },
+  { path: 'avaliacoesV2', component: AvaliacoesV2PageComponent
   },
   { path: '', component: HomePageComponent
   }

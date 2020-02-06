@@ -9,14 +9,17 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
-import {CalendarModule} from 'primeng/calendar';
+import { CalendarModule } from 'primeng/calendar';
+import { CheckboxModule } from 'primeng/checkbox';
 
 import { AvaliacoesPageComponent } from './avaliacoes-page.component';
 import { SharedModule } from './../shared/shared.module';
+import { AvaliacoesV2PageComponent } from './avaliacoes-v2-page/avaliacoes-v2-page.component';
 
 @NgModule({
   declarations: [
-     AvaliacoesPageComponent
+     AvaliacoesPageComponent,
+     AvaliacoesV2PageComponent
   ],
   imports: [
     CommonModule,
@@ -29,15 +32,14 @@ import { SharedModule } from './../shared/shared.module';
     RouterModule,
     HttpClientModule,
     TableModule,
-    CalendarModule
+    CalendarModule,
+    CheckboxModule
   ],
   exports: [
-    AvaliacoesPageComponent
+    AvaliacoesPageComponent,
+    AvaliacoesV2PageComponent
   ],
-  providers: [
-  ],
-  entryComponents: [
-  ]
+  providers: []
 })
 
 export class AvaliacoesModule { }

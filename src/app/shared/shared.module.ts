@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MessageComponent } from './message/message.component';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   imports: [
@@ -10,9 +11,10 @@ import { MessageModule } from 'primeng/message';
     MessageModule,
     MessagesModule
   ],
-  declarations: [ MessageComponent ],
+  declarations: [ MessageComponent, ErrorPageComponent ],
   exports: [
-    MessageComponent
+    MessageComponent,
+    ErrorPageComponent
   ]
 })
 

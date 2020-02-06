@@ -38,7 +38,7 @@
   
         <div class="ui-g-12 ui-md-6 ui-fluid">
           <label> Professor Responsável </label>
-          <p-dropdown [options]="professores" [(ngModel)]="disciplina.professor.id" placeholder="Selecione o Professor"
+          <p-dropdown [options]="professores" [(ngModel)]="disciplina.professor" placeholder="Selecione o Professor"
           [showClear]="true" name="professor" #professor="ngModel" required>
         </p-dropdown>
 

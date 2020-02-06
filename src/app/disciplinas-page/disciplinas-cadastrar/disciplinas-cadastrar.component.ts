@@ -1,7 +1,7 @@
 import { ErrorHandlerService } from '../../core/error-handler.service';
 import { DisciplinasService } from '../disciplinas.service';
 import { ProfessoresService } from '../../professores-page/professores.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { Disciplina } from 'src/app/model/disciplina.model';
 import { SelectItem } from 'primeng/api/selectitem';
 import { ToastyService } from 'ng2-toasty';
@@ -20,6 +20,7 @@ export class DisciplinasCadastrarComponent implements OnInit {
     {label: '1 - Ativa', value: 1 },
     {label: '2 - Não Ativa', value: 0 }
   ];
+  professor: any;
  
   constructor(
     private disciplinaService: DisciplinasService,
@@ -40,7 +41,7 @@ export class DisciplinasCadastrarComponent implements OnInit {
   carregarDisciplina(){
     this.disciplinaService.detalhar().subscribe( ( res =>{
       this.disciplina = res.json();
-      this.carregarProfessores();
+      console.log( res.json)
       this.editar = true;
     }));
   }
@@ -48,11 +49,12 @@ export class DisciplinasCadastrarComponent implements OnInit {
   carregarProfessores() {
     this.professoreService.consultar().subscribe( (res: any[]) =>
     this.professores = res.map( professor => {
-        return { label: professor.nome , value: professor.id }
+        return { label: professor.nome , value: { "id": professor.id } }
     }));
   }
 
   adicionar() {
+    console.log( this.disciplina )
     if(this.editar == true){
       this.disciplinaService.editar(this.disciplina).subscribe( disciplina => {
         this.toasty.success('Edição feita com sucesso')

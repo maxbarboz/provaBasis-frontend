@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { TabMenuModule } from 'primeng/tabmenu';
 import { ButtonModule } from 'primeng/button';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService} from 'primeng/api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
