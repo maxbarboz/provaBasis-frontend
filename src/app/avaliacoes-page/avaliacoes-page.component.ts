@@ -18,7 +18,8 @@ export class AvaliacoesPageComponent implements OnInit {
   disciplina: SelectItem[];
   alunos: SelectItem[];
   exibindoAlunos: boolean;
-  
+  mostrarDisciplinas: boolean;
+
   constructor(
     private avaliacoesService: AvaliacoesService,
     private disciplinasService: DisciplinasService,
@@ -28,6 +29,10 @@ export class AvaliacoesPageComponent implements OnInit {
 
   ngOnInit() {
     this.carregarDisciplina();
+  }
+
+  mostrarDisciplinasAlterar(){
+    return this.mostrarDisciplinas = !this.mostrarDisciplinas;
   }
 
   carregarDisciplina(){
