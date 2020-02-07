@@ -26,11 +26,10 @@
                         <li *ngFor="let disciplinas of alunos.disciplinas">
                             <input type="text" pInputText value="{{ disciplinas.nome }}" disabled/>
                         </li>
-
-                        <button type="button" class="cssDetalhar" (click)="visualizar()"> Visualizar notas </button>
                     </ul>
-
                 </div>
+
+                <button type="button" class="cssDetalhar" (click)="visualizar()"> Visualizar notas </button>
 
                 <div class="error" [hidden]="!exibindoErro">
                     <app-error-page></app-error-page>    
