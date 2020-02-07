@@ -20,7 +20,7 @@ export class DisciplinasCadastrarComponent implements OnInit {
     {label: '1 - Ativa', value: 1 },
     {label: '2 - Não Ativa', value: 0 }
   ];
-  professor: number;
+  professorSelecionado: any;
  
   constructor(
     private disciplinaService: DisciplinasService,
@@ -41,6 +41,7 @@ export class DisciplinasCadastrarComponent implements OnInit {
   carregarDisciplina(){
     this.disciplinaService.detalhar().subscribe( ( res =>{
       this.disciplina = res.json();
+      this.professorSelecionado = this.disciplina.professor.id;
       console.log( this.disciplina )
       this.editar = true;
     }));
@@ -49,12 +50,12 @@ export class DisciplinasCadastrarComponent implements OnInit {
   carregarProfessores() {
     this.professoreService.consultar().subscribe( (res: any[]) =>
     this.professores = res.map( professor => {
-        return { label: professor.nome , value: { "id": professor.id }  }
+        return { label: professor.nome , value: professor.id  }
     }));
   }
 
   adicionar() {
-    console.log( this.disciplina )
+    this.montarObjetoProfessor();
     if(this.editar == true){
       this.disciplinaService.editar(this.disciplina).subscribe( disciplina => {
         this.toasty.success('Edição feita com sucesso')
@@ -72,7 +73,10 @@ export class DisciplinasCadastrarComponent implements OnInit {
     }
   }
 
-  getProfessor(professor){
-    return professor.id;
+  montarObjetoProfessor(){
+    this.disciplina.professor = {
+      "id": this.professorSelecionado
+    }
   }
+
 }
