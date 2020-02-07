@@ -17,6 +17,7 @@ export class AvaliacoesPageComponent implements OnInit {
   disciplina: SelectItem[];
   alunos: SelectItem[];
   exibindoAlunos: boolean;
+  exibindoErro: boolean;
   mostrarDisciplinas: boolean;
 
   constructor(
@@ -46,7 +47,16 @@ export class AvaliacoesPageComponent implements OnInit {
       this.alunos = res.json().alunos.map( aluno => {
         return { label: aluno.nome , value: {"id": aluno.id} }
       })
-      this.alteraExibindoAlunos();
+
+      if( this.alunos[0] == null){
+        this.exibindoErro = !this.exibindoErro;
+        this.mostrarDisciplinasAlterar();
+      }else{
+        if( this.exibindoErro == true){
+          this.exibindoErro = !this.exibindoErro;
+        }
+        this.alteraExibindoAlunos();
+      }
     });
   }
 

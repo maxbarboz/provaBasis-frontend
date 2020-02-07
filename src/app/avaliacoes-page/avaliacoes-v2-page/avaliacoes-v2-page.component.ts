@@ -61,11 +61,11 @@ export class AvaliacoesV2PageComponent implements OnInit {
 
       if( this.alunos[0] == null ){
         this.alteraExibindoErro();
+        this.mostrarDisciplinasAlterar();
       }else{
         this.alteraExibindoAlunos();
         this.montaColuna();
       }
-      this.montaColuna();
     });
   }
   

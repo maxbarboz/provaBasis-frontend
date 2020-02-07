@@ -44,6 +44,10 @@
                 <p-button icon="pi pi-times" label="Cancelar Pesquisa" (click)="mostrarDisciplinasAlterar()" (click)="alteraExibindoAlunos()" [hidden]="!exibindoAlunos" ></p-button>
             </div>
 
+            <div class="error" [hidden]="!exibindoErro">
+                <app-error-page></app-error-page>    
+            </div>
+            
             <div class="ui-g-12 ui-fluid" [hidden]="!exibindoAlunos">
                 <label>Alunos</label>
                     <p-dropdown [options]="alunos" [(ngModel)]="avaliacao.aluno" placeholder="Selecione o Aluno"

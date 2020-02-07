@@ -6,6 +6,6 @@ export class Aluno {
       public dataNascimento?: Date,
       public disciplinas?: any[],
       public matricula?: string,
-      public avaliacao?: Avaliacao[]
+      public avaliacoes?: Avaliacao[]
     ) {}
 }

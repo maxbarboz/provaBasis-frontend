@@ -32,6 +32,10 @@
 
                 </div>
 
+                <div class="error" [hidden]="!exibindoErro">
+                    <app-error-page></app-error-page>    
+                </div>
+                
                 <div class="visualizarNotas" *ngIf="mostrarComponent">
                     <p-table [columns]="cols" [value]="alunos.avaliacoes" [rows]="5" [paginator]="true"
                         [responsive]="true">
@@ -79,7 +83,6 @@
         </div>
     </div>
 </div>
-
 
 <form #formEditar="ngForm" autocomplete="off">
     <div class="container2">
