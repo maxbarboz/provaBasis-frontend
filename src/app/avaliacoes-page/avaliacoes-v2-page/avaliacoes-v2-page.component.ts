@@ -63,6 +63,9 @@ export class AvaliacoesV2PageComponent implements OnInit {
         this.alteraExibindoErro();
         this.mostrarDisciplinasAlterar();
       }else{
+        if( this.exibindoErro == true){
+          this.exibindoErro = !this.exibindoErro;
+        }
         this.alteraExibindoAlunos();
         this.montaColuna();
       }
