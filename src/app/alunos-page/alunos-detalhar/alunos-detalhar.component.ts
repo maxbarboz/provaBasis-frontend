@@ -25,6 +25,7 @@ cols = [
 
 mostrarComponent: boolean = false;
 exibindoErro: boolean = false;
+exibindoMaterias: boolean = true;
 
   constructor(
     private alunosService: AlunosService,
@@ -41,7 +42,10 @@ exibindoErro: boolean = false;
   detalhar(){
     this.alunosService.detalhar().subscribe( res => {
       this.alunos = res.json();
-      console.log( this.alunos )
+
+      if( this.alunos.disciplinas[0] == null ){
+        this.exibindoMaterias = !this.exibindoMaterias;
+      }
     }); 
   }
 

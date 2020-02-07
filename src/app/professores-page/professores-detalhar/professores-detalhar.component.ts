@@ -10,6 +10,7 @@ import { Professor } from 'src/app/model/professor.model';
 export class ProfessoresDetalharComponent implements OnInit {
 
   professor = new Professor;
+  exibindoMaterias: boolean = true;
 
   constructor(
     private professoresService: ProfessoresService
@@ -22,6 +23,10 @@ export class ProfessoresDetalharComponent implements OnInit {
   detalharProfessor(){
     this.professoresService.detalhar().subscribe( res => {
       this.professor = res.json();
+
+      if( this.professor.disciplinas[0] == null){
+        this.exibindoMaterias = !this.exibindoMaterias;
+      }
     });
   }
 }

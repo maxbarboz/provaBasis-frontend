@@ -20,7 +20,7 @@
                     Matrícula: <input type="text" pInputText value="{{ alunos.matricula }}" disabled/>
                 </div>
 
-                <div class="ui-g-12">
+                <div class="ui-g-12" [hidden]="!exibindoMaterias">
                     Matérias:
                     <ul>
                         <li *ngFor="let disciplinas of alunos.disciplinas">
