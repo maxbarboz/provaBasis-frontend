@@ -47,7 +47,6 @@ export class AvaliacoesPageComponent implements OnInit {
       this.alunos = res.json().alunos.map( aluno => {
         return { label: aluno.nome , value: {"id": aluno.id} }
       })
-      console.log( this.alunos )
       this.alteraExibindoAlunos();
     });
   }
@@ -57,7 +56,6 @@ export class AvaliacoesPageComponent implements OnInit {
   }
 
   adicionar(){
-    console.log( this.avaliacao )
     this.avaliacoesService.adicionar(this.avaliacao).subscribe(
       avaliacao => {
         this.toasty.success('Nota lançada com sucesso')

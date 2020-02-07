@@ -42,7 +42,6 @@ export class DisciplinasCadastrarComponent implements OnInit {
     this.disciplinaService.detalhar().subscribe( ( res =>{
       this.disciplina = res.json();
       this.professorSelecionado = this.disciplina.professor.id;
-      console.log( this.disciplina )
       this.editar = true;
     }));
   }

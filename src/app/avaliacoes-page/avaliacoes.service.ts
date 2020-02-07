@@ -36,7 +36,6 @@ export class AvaliacoesService {
   }
 
   addIdPesquisa(id: number){
-    console.log( id )
     this.idAvaliacao = id;
   }
 }

@@ -35,7 +35,6 @@ export class ProfessoresCadastrarComponent implements OnInit {
 
   adicionar(){
     if(this.editar == true){
-      console.log( this.professor )
       this.professorService.editar(this.professor).subscribe( professor => {
         this.toasty.success('Edição feita com sucesso')
       },

@@ -48,12 +48,11 @@ export class AvaliacoesV2PageComponent implements OnInit {
     this.disciplinasService.detalharParaAvaliacao(idDisciplina).subscribe( res => {
 
       let aluno: any;
-      console.log( res.json() )
-      res.json().alunos.forEach( abc => {
+      res.json().alunos.forEach( alunosRepo => {
         aluno = {
-          id: abc.id,
-          nome: abc.nome,
-          matricula: abc.matricula,
+          id: alunosRepo.id,
+          nome: alunosRepo.nome,
+          matricula: alunosRepo.matricula,
           nota: undefined,
           data: undefined
         }
@@ -61,7 +60,6 @@ export class AvaliacoesV2PageComponent implements OnInit {
         this.alunos.push(aluno)
       })
 
-      console.log( this.alunos )
       if( this.alunos[0] == null ){
         this.alteraExibindoErro();
       }else{
