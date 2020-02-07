@@ -98,7 +98,7 @@ export class AvaliacoesV2PageComponent implements OnInit {
       }else{
         this.avaliacoesService.adicionar(this.avaliacao).subscribe(
           avaliacao => {
-            this.toasty.success("Nota(as) lançada(as) com sucesso")
+            this.toasty.success("Nota lançada com sucesso")
           },
           err =>  {
             this.errorHandler.handleError( err.json().message );

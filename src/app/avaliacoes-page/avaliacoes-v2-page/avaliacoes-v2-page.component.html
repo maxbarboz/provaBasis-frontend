@@ -1,6 +1,10 @@
 <div class="container">
-    <form #formAvaliacaoV2="ngForm" autocomplete="off">
+    <form #formAvaliacaoV2="ngForm" autocomplete="off" style="margin: 50px 50px;">
   
+        <div class="ui-g-3 ui-fluid">
+            <button pButton type="button" icon="pi pi-upload" label="Lançar Nota Única" routerLink="/avaliacoes" ></button>
+        </div>
+
         <div class="ui-g-12 ui-fluid">
             <label>Disciplinas</label>
             <p-dropdown [options]="disciplina" [(ngModel)]="avaliacao.disciplina" placeholder="Selecione a Disciplina" 
@@ -20,7 +24,7 @@
             <app-error-page></app-error-page>    
         </div>
 
-        <div class="tabelaLancamentoNotas" [hidden]="!exibindoAlunos">
+        <div class="tabelaLancamentoNotas" class="ui-g-12" [hidden]="!exibindoAlunos">
             <h3> Lançar Notas </h3>
             <p-table [columns]="cols" [value]="alunos">
                 <ng-template pTemplate="header" let-columns>
@@ -44,7 +48,7 @@
                         </td>
 
                         <td>
-                            <p-calendar [(ngModel)]="alunos.data" [ngModelOptions]="{standalone: true}"></p-calendar>
+                            <p-calendar [(ngModel)]="alunos.data" dateFormat="dd/mm/yy" [ngModelOptions]="{standalone: true}"></p-calendar>
                         </td>
                     </tr>
                 </ng-template>
