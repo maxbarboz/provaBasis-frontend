@@ -1,7 +1,7 @@
 <div class="container">
     <form #formAvaliacao="ngForm" autocomplete="off">
   
-      <div class="ui-g" style="border-style:groove; margin: 50px 200px;">
+      <div class="ui-g" style="border-style:groove; margin: 50px 100px;">
         <div class="ui-g-3"></div>
 
         <div class="ui-g-6">
@@ -10,7 +10,7 @@
                 <h1 class="pi pi-save">Lançar notas</h1>
               </div>
 
-            <div class="ui-g-12 ui-fluid">
+            <div class="ui-g-6 ui-fluid">
             <label>Valor da Nota</label>
             <input pInputText type="number" name="nota"
                 [(ngModel)]="avaliacao.nota" #nota="ngModel" required>
@@ -20,7 +20,7 @@
     
             </div>
     
-            <div class="ui-g-12 ui-fluid">
+            <div class="ui-g-6 ui-fluid">
             <label>Data</label>
                 <p-calendar [showIcon]="true" name="data" dateFormat="dd/mm/yy"
                 [readonlyInput]="false" [(ngModel)]="avaliacao.data" #data="ngModel" required></p-calendar>
