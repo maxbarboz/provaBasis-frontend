@@ -48,6 +48,7 @@ export class AvaliacoesV2PageComponent implements OnInit {
     this.disciplinasService.detalharParaAvaliacao(idDisciplina).subscribe( res => {
 
       let aluno: any;
+      console.log( res.json() )
       res.json().alunos.forEach( abc => {
         aluno = {
           id: abc.id,
@@ -81,7 +82,6 @@ export class AvaliacoesV2PageComponent implements OnInit {
 
   montaNotaAvaliacao(){
     this.alunos.map( alunoAva => {
-      this.alunoNome = alunoAva.nome
       this.avaliacao.aluno = {
         id: alunoAva.id
       }
@@ -90,6 +90,7 @@ export class AvaliacoesV2PageComponent implements OnInit {
         id: this.idDisciplina
       }
       this.avaliacao.nota = alunoAva.nota
+      this.alunoNome = alunoAva.nome
 
       if( this.avaliacao.nota == null && this.avaliacao.data == null){
       }else if( this.avaliacao.nota == null || this.avaliacao.data == null){
@@ -97,7 +98,7 @@ export class AvaliacoesV2PageComponent implements OnInit {
       }else{
         this.avaliacoesService.adicionar(this.avaliacao).subscribe(
           avaliacao => {
-            this.toasty.success('Nota lançada com sucesso')
+            this.toasty.success("Nota(as) lançada(as) com sucesso")
           },
           err =>  {
             this.errorHandler.handleError( err.json().message );

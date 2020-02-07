@@ -5,7 +5,7 @@ export class Avaliacao {
     constructor(
       public data?: Date,
       public disciplina?: Disciplina,
-      public aluno?: Aluno,
+      public aluno?: object,
       public nota?: number
     ) {}
 }

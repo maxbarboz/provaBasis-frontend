@@ -39,10 +39,10 @@
         <div class="ui-g-12 ui-md-6 ui-fluid">
           <label> Professor Responsável </label>
           <p-dropdown [options]="professores" [(ngModel)]="disciplina.professor" placeholder="Selecione o Professor"
-          [showClear]="true" name="professor" #professor="ngModel" required>
+            [showClear]="true" name="professorVar" #professorVar="ngModel" required>
         </p-dropdown>
 
-          <app-message [control]="professor" error="required"
+          <app-message [control]="professorVar" error="required"
             text="Informe o professor responsável"></app-message>
             
         </div>

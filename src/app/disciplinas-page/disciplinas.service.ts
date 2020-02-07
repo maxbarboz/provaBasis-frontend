@@ -47,7 +47,7 @@ export class DisciplinasService {
   }
 
   detalharParaAvaliacao(id: number) { 
-    return this.http.get(`http://localhost:8080/api/disciplinas/detalhes/${id}`);
+    return this.http.get(`http://localhost:8080/api/disciplinas/avaliacao/detalhes/${id}`);
   }
 
   addIdPesquisa(id: number, carregarDisciplina: boolean){
