@@ -1,0 +1,287 @@
+[33mcommit 8a53e03d03f6728a609b09d79d22c5230881c829[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Fri Feb 7 13:00:03 2020 -0300
+
+    Edições
+
+[33mcommit 3fdac4c9b1c0216987e6d4cdd1c799f125915dfa[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Fri Feb 7 12:24:13 2020 -0300
+
+    Alterações
+
+[33mcommit 6ea8647f8ed44baac6f47be166a72adb0bc0411d[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Fri Feb 7 11:32:55 2020 -0300
+
+    Alterações
+
+[33mcommit c44b9e712712930b8cfb3b85696525aeacb369e0[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Fri Feb 7 11:07:23 2020 -0300
+
+    Modificação
+
+[33mcommit 241befdb97ef19ed7480eac847fdeb4e1d0debc3[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Fri Feb 7 11:04:57 2020 -0300
+
+    Modificação
+
+[33mcommit 9c197195fa2eef273ea92cfda8dcdb7ff1db6bfc[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Fri Feb 7 09:52:19 2020 -0300
+
+    Arrumado imports
+
+[33mcommit 5b79f237b676ccfc0fb05749c0c99dd8f745c9f1[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Fri Feb 7 09:44:41 2020 -0300
+
+    Retirada dos console log
+
+[33mcommit e0c5b4cecf6f6576fb9b96b74e194c365ec16e9c[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Fri Feb 7 09:30:29 2020 -0300
+
+    Correção trazer professor edição de Disciplina
+
+[33mcommit b7323ed147038d0c043d0706a95f66084ae04c3f[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Fri Feb 7 09:03:10 2020 -0300
+
+    Checkpoint
+
+[33mcommit 60879efc0cb0adf44471a536a1c25361052fffbe[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Thu Feb 6 15:30:12 2020 -0300
+
+    Alterações
+
+[33mcommit 4b8b7a83bfe6e7a5f01fcc2832603d3cce5acbe2[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Thu Feb 6 09:43:09 2020 -0300
+
+    Correção em lançamento de notas
+
+[33mcommit b2e12749ad12b8afeac54b5c1f0cf12fd2b2244e[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Feb 5 16:13:27 2020 -0300
+
+    Finalizado
+
+[33mcommit 3a729165fadf4240e8230c25842808be0d1330bc[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Feb 5 14:18:28 2020 -0300
+
+    Adicionado correção no multiselect
+
+[33mcommit ba1e9543d9da7c11f9fdb05b5bae13dc69bef10f[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Feb 5 11:35:15 2020 -0300
+
+    Aprimoramento de código
+
+[33mcommit 0f06916fa5742ea132fe1eda8e8a9453bb03829f[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Feb 5 11:25:23 2020 -0300
+
+    Alterações
+
+[33mcommit f8dab73e4882c3f7cd881736954c4629a19f0afe[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Feb 5 10:27:11 2020 -0300
+
+    Adicionado alterações
+
+[33mcommit 0b777a8305c73ec057fa2975e7c88197b121e3f6[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Tue Feb 4 11:23:33 2020 -0300
+
+    Correção da data da avaliação para padrão Brasileiro
+
+[33mcommit 5e0276be38535f1b1af3594b9e6c966a752fb50d[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Tue Feb 4 09:43:39 2020 -0300
+
+    Adicionado todos retornos para função de edição
+
+[33mcommit 9c4dc771233da334a768cbda9756373e583f75a0[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Mon Feb 3 11:01:28 2020 -0300
+
+    Alterações em avaliações
+
+[33mcommit b00daa9e9c763f3853eb25f02f2bdbfab83b2a3a[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Mon Feb 3 08:01:43 2020 -0300
+
+    Parte final faltando edição de avaliação
+
+[33mcommit eba6f7e2986533772a16d1a7221a55dad35f41b2[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Fri Jan 31 14:16:27 2020 -0300
+
+    Validações de campos
+
+[33mcommit bb6ce2528930ee070cd018b07f0cd57b8d43d2b0[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Fri Jan 31 13:49:44 2020 -0300
+
+    Alterações
+
+[33mcommit dae183b1f8d165c215fada3023c2637e9a2e98f7[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Fri Jan 31 13:00:56 2020 -0300
+
+    Checkpoint
+
+[33mcommit d7948814b2d7a354c9155f94b80bf5148dda850d[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Thu Jan 30 23:20:28 2020 -0300
+
+    Checkpoint
+
+[33mcommit cd32ff4f79e029f773cf2479cb6610e76742399e[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Thu Jan 30 14:54:30 2020 -0300
+
+    Adicionado primeira correção de erro do cpf
+
+[33mcommit 9b50c4addb014a943009d23127fc6bc3a8d6e588[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Thu Jan 30 13:10:08 2020 -0300
+
+    Alterações
+
+[33mcommit a87bdf9255a1908fbfc936604b711e74952b8c4b[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Thu Jan 30 11:52:17 2020 -0300
+
+    Correção de requisição
+
+[33mcommit 8fd95861726616d407eb935bc1ae1651418684ea[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Thu Jan 30 10:20:25 2020 -0300
+
+    Alteração na mensagem de erro
+
+[33mcommit c2b794fece60614b2a0ded9cc342a9f533b19be8[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Thu Jan 30 09:21:07 2020 -0300
+
+    Adicionado correção de erro
+
+[33mcommit cda91aaa60b38cd3bc2cf60d5d1cdd9d5b4b3e4d[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Thu Jan 30 09:00:04 2020 -0300
+
+    Adicionado mudanças
+
+[33mcommit a6ca07c2dfe926301d594e457787539a5256c567[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Jan 29 15:44:31 2020 -0300
+
+    Alterações em formulários
+
+[33mcommit a7d92f06dc3bfd442898936c5de4ce45daced30b[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Jan 29 14:48:10 2020 -0300
+
+    Corrigido imports
+
+[33mcommit 0e19c3ed2f597b3101ccba26fb14f4070e7adb64[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Jan 29 14:40:51 2020 -0300
+
+    Adicionado funcionalidades para professores
+
+[33mcommit 730030f99da3af1282b58ace68ee806131e8c36e[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Jan 29 14:03:01 2020 -0300
+
+    Adicionado restante de funcionalidades em disciplinas
+
+[33mcommit 3dafbc3fbd32d71bda93dda20bc0d3cc4d26e4da[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Jan 29 13:07:38 2020 -0300
+
+    Corrigido alunos
+
+[33mcommit f2306835572145de7b18e5e416e2a6fa63aef5ef[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Jan 29 12:39:11 2020 -0300
+
+    Adicionado msg de erros vindas do backend
+
+[33mcommit 1d7878dea9bb400f5fb3b49a25b65af1bd2e0666[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Jan 29 11:02:51 2020 -0300
+
+    Adicionado interações com usuário
+
+[33mcommit b74624106a3aab50d15dcefad13eb4ecaa32c15b[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Jan 29 09:33:56 2020 -0300
+
+    Alterações
+
+[33mcommit c389659770e1663e66ca78bdbf46e870b3242b7b[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Wed Jan 29 09:09:29 2020 -0300
+
+    Alterações
+
+[33mcommit d95fd88ce40268c88f0def1d687dfe458ef3b038[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Tue Jan 28 21:18:27 2020 -0300
+
+    Adicionado funcionalidades em professores
+
+[33mcommit d2e74a880638172a2585e1ee22ddd3f50c4e4604[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Tue Jan 28 15:53:32 2020 -0300
+
+    Salvando Alterações
+
+[33mcommit eb15f2830e185d1e2a45e444d4e4cc0777a5dfcb[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Tue Jan 28 13:32:04 2020 -0300
+
+    Adicionado detalhar no aluno
+
+[33mcommit 8709859a8377f56beb213485dba82bcd37be9d35[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Tue Jan 28 09:47:58 2020 -0300
+
+    Método post finalizado, adicionado também excluir
+
+[33mcommit de198116c00f5bd09ea02893707f468f3c4a2ab5[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Mon Jan 27 21:10:05 2020 -0300
+
+    Páginas com listagens finalizadas, páginas de cadastro iniciadas
+
+[33mcommit 462ee2d832fa9f065051b064b737e76ae6eb3610[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Mon Jan 27 16:23:18 2020 -0300
+
+    Adicionado listagem de disciplinas
+
+[33mcommit 34e2e004d91f89a000978e5047b570e42b9f9f41[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Mon Jan 27 15:09:52 2020 -0300
+
+    Parte inicial front
+
+[33mcommit f05b0f4a460e5ed619fbfaf7cadb4620e029af72[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Tue Jan 21 16:20:47 2020 -0300
+
+    commit inicial
+
+[33mcommit b0e6a32778a4901c24b9beafe5e30cd61db10baa[m
+Author: Maxsuel Storch <maxsuelstorch@gmail.com>
+Date:   Tue Jan 21 16:18:08 2020 -0300
+
+    Initial commit
