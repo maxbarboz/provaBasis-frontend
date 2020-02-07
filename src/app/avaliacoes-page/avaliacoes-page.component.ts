@@ -1,4 +1,3 @@
-import { AlunosService } from './../alunos-page/alunos.service';
 import { SelectItem } from 'primeng/api/selectitem';
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 import { ToastyService } from 'ng2-toasty';

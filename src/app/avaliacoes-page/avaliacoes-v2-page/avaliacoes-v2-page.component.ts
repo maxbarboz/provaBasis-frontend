@@ -1,11 +1,10 @@
 import { ErrorHandlerService } from './../../core/error-handler.service';
-import { Aluno } from 'src/app/model/aluno.model';
 import { ToastyService } from 'ng2-toasty';
 import { AvaliacoesService } from './../avaliacoes.service';
 import { SelectItem } from 'primeng/api/selectitem';
 import { Avaliacao } from './../../model/avaliacao.model';
 import { DisciplinasService } from './../../disciplinas-page/disciplinas.service';
-import { Component, OnInit, ErrorHandler } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-avaliacoes-v2-page',
