@@ -12,3 +12,8 @@ h1{
 img{
     size: 100px;
 }
+
+.class-button button{
+    width: 180px; 
+    height: 60px;
+}

@@ -1,0 +1,15 @@
+button {
+    margin: 5px;
+}
+
+.cssEditar{
+    background-color: blue;
+}
+
+.cssDetalhar{
+    background-color: green;
+}
+
+.cssExcluir{
+    background-color: red;
+}
